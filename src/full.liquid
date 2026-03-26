@@ -4,8 +4,10 @@
 {% assign stale_cutoff_epoch = now_epoch | minus: stale_secs %}
 {% assign selected_stop = trmnl.plugin_settings.custom_fields_values.stopid | default: "" | strip %}
 {% assign selected_route = trmnl.plugin_settings.custom_fields_values.routeid | default: "" | strip %}
-{% assign departure_count = departures.size | default: 0 %}
-{% assign entity_count = entity.size | default: 0 %}
+{% assign rows_count = 0 %}
+{% if rows %}
+{% assign rows_count = rows.size %}
+{% endif %}
 <div class="layout flex flex--top">
   <table class="table table--small">
     <thead>
@@ -18,34 +20,34 @@
     </thead>
     <tbody>
       {% assign row_count = 0 %}
-      {% if selected_stop != "" and departure_count > 0 %}
-      {% for departure in departures %}
+      {% if selected_stop != "" %}
+      {% if rows_count > 0 %}
+      {% for row in rows %}
       {% if row_count >= 12 %}{% break %}{% endif %}
-      {% assign route_id = departure.route_id | default: "-" | append: "" %}
-      {% assign departure_stop_id = departure.stop_id | default: "-" | append: "" %}
-      {% assign departure_station_id = departure.station_id | default: "" | append: "" %}
+      {% assign row_route_id = row.route_id | default: "" | append: "" %}
+      {% assign row_stop_id = row.stop_id | default: "" | append: "" %}
+      {% assign row_station_id = row.station_id | default: "" | append: "" %}
       {% assign route_matches = true %}
       {% assign stop_matches = true %}
-      {% if selected_stop != "" and departure_stop_id != selected_stop and departure_station_id != selected_stop %}
+      {% if row_stop_id != selected_stop and row_station_id != selected_stop %}
       {% assign stop_matches = false %}
       {% endif %}
-      {% if selected_route != "" and route_id != selected_route %}
+      {% if selected_route != "" and row_route_id != selected_route %}
       {% assign route_matches = false %}
       {% endif %}
       {% if stop_matches and route_matches %}
-      {% assign departure_stop_name = departure.station_name | default: departure.stop_name | default: departure_stop_id %}
-      {% assign platform_code = departure.platform_code | default: "" | strip %}
       <tr>
-        <td><span class="label">{{ departure.route_name | default: route_id }}</span></td>
-        <td><span class="label">{{ departure.headsign | default: "-" }}</span></td>
-        <td><span class="label">{{ departure_stop_name }}{% if platform_code != "" %} P{{ platform_code }}{% endif %}</span></td>
-        <td><span class="label">{% if departure.live_status_text != blank %}{{ departure.scheduled_time_local }} - {{ departure.live_status_text }}{% else %}{{ departure.scheduled_time_local }} scheduled{% endif %}</span></td>
+        <td><span class="label">{{ row.route_name | default: row_route_id }}</span></td>
+        <td><span class="label">{{ row.headsign | default: "-" }}</span></td>
+        <td><span class="label">{{ row.stop_name }}{% if row.platform_code != blank %} P{{ row.platform_code }}{% endif %}</span></td>
+        <td><span class="label">{{ row.status_text }}</span></td>
       </tr>
       {% assign row_count = row_count | plus: 1 %}
       {% endif %}
       {% endfor %}
       {% endif %}
-      {% if row_count == 0 and entity_count > 0 %}
+      {% endif %}
+      {% if row_count == 0 and entity and entity.size > 0 %}
       {% for item in entity %}
       {% if row_count >= 12 %}{% break %}{% endif %}
       {% assign v = item.vehicle %}
@@ -62,16 +64,13 @@
       {% assign status_text = item.schedule.status_text | default: "No live status" %}
       {% assign stop_matches = true %}
       {% assign route_matches = true %}
-      {% if selected_stop != "" %}
-      {% if matched_stop_id != selected_stop and matched_stop_station_id != selected_stop and next_stop_id != selected_stop and next_stop_station_id != selected_stop %}
+      {% if selected_stop != "" and matched_stop_id != selected_stop and matched_stop_station_id != selected_stop and next_stop_id != selected_stop and next_stop_station_id != selected_stop %}
       {% assign stop_matches = false %}
-      {% endif %}
       {% endif %}
       {% if selected_route != "" and route_id != selected_route %}
       {% assign route_matches = false %}
       {% endif %}
-      {% if stop_matches and route_matches %}
-      {% if vehicle_timestamp >= stale_cutoff_epoch %}
+      {% if stop_matches and route_matches and vehicle_timestamp >= stale_cutoff_epoch %}
       <tr>
         <td><span class="label">{{ route_name }}</span></td>
         <td><span class="label">{{ headsign }}</span></td>
@@ -79,7 +78,6 @@
         <td><span class="label">{{ status_text }}</span></td>
       </tr>
       {% assign row_count = row_count | plus: 1 %}
-      {% endif %}
       {% endif %}
       {% endif %}
       {% endfor %}
@@ -104,7 +102,7 @@
   {% if meta.error and meta.error.type %}
   Error type: {{ meta.error.type }}
   {% else %}
-  Use Station / Platform ID in the plugin custom fields. When a stop is selected, the plugin shows scheduled departures and overlays live status when available.
+  Use Station / Platform ID in the plugin custom fields. Selected stops show scheduled rows with live status when available.
   {% endif %}
 </span>
 <div class="title_bar">

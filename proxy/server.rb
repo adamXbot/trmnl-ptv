@@ -211,7 +211,7 @@ class GtfsStaticIndex
   DEFAULT_GTFS_PATH = GtfsScheduleBootstrap::DEFAULT_GTFS_PATH
   TIMEZONE = 'Australia/Melbourne'
   LOOKAHEAD_DAYS = 2
-  DEPARTURES_PER_STOP = 3
+  ROWS_PER_STOP = 2
 
   attr_reader :gtfs_path
 
@@ -290,47 +290,18 @@ class GtfsStaticIndex
       end
   end
 
-  def upcoming_departures(now: local_now, live_entities: [])
-    live_by_trip_id = build_live_entity_index(live_entities)
-    departures = []
-    per_stop_count = Hash.new(0)
+  def build_display_rows(live_entities:, now: local_now)
+    live_rows = Array(live_entities).map { |entity| build_live_row(entity) }.compact
+    scheduled_rows = build_scheduled_rows(live_entities: live_entities, now: now)
 
-    each_service_date(now.to_date) do |service_date|
-      @stop_times_by_stop.each do |stop_id, stop_times|
-        stop_times.each do |stop_time|
-          trip_info = @trips[stop_time['trip_id']] || {}
-          next unless service_active?(trip_info['service_id'], service_date)
-
-          scheduled_epoch = gtfs_time_to_epoch(service_date.strftime('%Y%m%d'), stop_time['departure_time'])
-          next if scheduled_epoch < now.to_i
-
-          stop = @stops[stop_id] || {}
-          station_id = stop['parent_station'].to_s.empty? ? stop_id : stop['parent_station']
-          next if per_stop_count[stop_id] >= DEPARTURES_PER_STOP
-          next if per_stop_count[station_id] >= DEPARTURES_PER_STOP
-
-          route_info = @routes[trip_info['route_id']] || {}
-          live_entity = live_by_trip_id[stop_time['trip_id']]
-
-          departures << build_departure_record(
-            stop_time: stop_time,
-            stop: stop,
-            trip_info: trip_info,
-            route_info: route_info,
-            service_date: service_date,
-            scheduled_epoch: scheduled_epoch,
-            live_entity: live_entity
-          )
-
-          per_stop_count[stop_id] += 1
-          per_stop_count[station_id] += 1
-        end
-      end
-
-      break if departures.any?
+    (live_rows + scheduled_rows).sort_by do |row|
+      [
+        row['display_priority'] || 99,
+        row['scheduled_epoch'] || row['sort_epoch'] || 0,
+        row['route_name'].to_s,
+        row['stop_name'].to_s
+      ]
     end
-
-    departures.sort_by { |departure| departure['scheduled_epoch'] }
   end
 
   private
@@ -563,31 +534,87 @@ class GtfsStaticIndex
     rm * c
   end
 
-  def build_live_entity_index(live_entities)
-    Array(live_entities).each_with_object({}) do |entity, index|
+  def build_live_row(entity)
+    vehicle = entity['vehicle']
+    return nil unless vehicle
+
+    route_id = vehicle.dig('trip', 'route_id')
+    schedule = entity['schedule'] || {}
+    route = entity['route'] || {}
+    trip = entity['trip_details'] || {}
+
+    {
+      'kind' => 'live',
+      'stop_id' => schedule['matched_stop_id'] || vehicle['stop_id'],
+      'station_id' => schedule['matched_stop_station_id'] || schedule['matched_stop_parent_station'],
+      'stop_name' => schedule['matched_stop_name'] || vehicle['stop_id'],
+      'platform_code' => schedule['matched_stop_platform_code'],
+      'route_id' => route_id,
+      'route_name' => schedule['route_short_name'] || route['short_name'] || route_id,
+      'headsign' => schedule['headsign'] || trip['headsign'],
+      'status_text' => schedule['status_text'] || 'No live status',
+      'scheduled_epoch' => schedule['scheduled_epoch'] || vehicle['timestamp'],
+      'scheduled_time_local' => schedule['scheduled_time_local'],
+      'sort_epoch' => vehicle['timestamp'],
+      'display_priority' => 1
+    }.compact
+  end
+
+  def build_scheduled_rows(live_entities:, now:)
+    live_by_trip_id = Array(live_entities).each_with_object({}) do |entity, index|
       trip_id = entity.dig('vehicle', 'trip', 'trip_id')
       index[trip_id] = entity if trip_id
     end
+
+    rows = []
+    counts_by_stop = Hash.new(0)
+
+    each_service_date(now.to_date) do |service_date|
+      @stop_times_by_stop.each do |stop_id, stop_times|
+        next if counts_by_stop[stop_id] >= ROWS_PER_STOP
+
+        stop_times.each do |stop_time|
+          trip_info = @trips[stop_time['trip_id']] || {}
+          next unless service_active?(trip_info['service_id'], service_date)
+
+          scheduled_epoch = gtfs_time_to_epoch(service_date.strftime('%Y%m%d'), stop_time['departure_time'])
+          next if scheduled_epoch < now.to_i
+
+          rows << build_scheduled_row(
+            stop_time: stop_time,
+            trip_info: trip_info,
+            route_info: @routes[trip_info['route_id']] || {},
+            stop: @stops[stop_id] || {},
+            scheduled_epoch: scheduled_epoch,
+            live_entity: live_by_trip_id[stop_time['trip_id']]
+          )
+          counts_by_stop[stop_id] += 1
+          break if counts_by_stop[stop_id] >= ROWS_PER_STOP
+        end
+      end
+    end
+
+    rows
   end
 
-  def build_departure_record(stop_time:, stop:, trip_info:, route_info:, service_date:, scheduled_epoch:, live_entity:)
+  def build_scheduled_row(stop_time:, trip_info:, route_info:, stop:, scheduled_epoch:, live_entity:)
+    station_id = stop['parent_station'].to_s.empty? ? stop_time['stop_id'] : stop['parent_station']
+    live_status_text = live_entity && live_entity.dig('schedule', 'status_text')
+
     {
+      'kind' => 'scheduled',
       'stop_id' => stop_time['stop_id'],
-      'station_id' => stop['parent_station'].to_s.empty? ? stop_time['stop_id'] : stop['parent_station'],
+      'station_id' => station_id,
       'stop_name' => stop['stop_name'] || stop_time['stop_id'],
-      'station_name' => parent_station_for(stop)&.dig('stop_name') || stop['stop_name'] || stop_time['stop_id'],
       'platform_code' => stop['platform_code'],
-      'trip_id' => stop_time['trip_id'],
       'route_id' => trip_info['route_id'],
       'route_name' => route_info['short_name'] || route_info['long_name'] || trip_info['route_id'],
       'headsign' => trip_info['headsign'],
-      'service_date' => service_date.strftime('%Y%m%d'),
+      'status_text' => live_status_text || "#{Time.at(scheduled_epoch).localtime.strftime('%I:%M %P')} scheduled",
       'scheduled_epoch' => scheduled_epoch,
       'scheduled_time_local' => Time.at(scheduled_epoch).localtime.strftime('%I:%M %P'),
-      'live_status' => live_entity && live_entity.dig('schedule', 'status'),
-      'live_status_text' => live_entity && live_entity.dig('schedule', 'status_text'),
-      'live_reference_stop_name' => live_entity && (live_entity.dig('schedule', 'matched_stop_name') || live_entity.dig('schedule', 'next_stop_name')),
-      'live_vehicle_timestamp' => live_entity && live_entity.dig('vehicle', 'timestamp')
+      'sort_epoch' => scheduled_epoch,
+      'display_priority' => live_status_text ? 0 : 2
     }.compact
   end
 
@@ -844,13 +871,17 @@ class PtvSnapshotGenerator
     end
 
     feed = FeedMessage.decode(response.body)
-    payload = normalize_keys(feed.to_h)
-    payload['entity'] = Array(payload['entity']).map { |entity| @gtfs_index.enrich_entity(entity) }
-    payload['departures'] = @gtfs_index.upcoming_departures(live_entities: payload['entity'])
-    payload['meta'] = base_meta.merge(
+    normalized_feed = normalize_keys(feed.to_h)
+    entities = Array(normalized_feed['entity']).map { |entity| @gtfs_index.enrich_entity(entity) }
+
+    {
+      'header' => normalized_feed['header'] || {},
+      'entity' => entities,
+      'rows' => @gtfs_index.build_display_rows(live_entities: entities),
+      'meta' => base_meta.merge(
       'cache_ttl_seconds' => @cache_ttl
-    )
-    payload
+      )
+    }
   end
 
   private
