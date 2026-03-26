@@ -5,6 +5,7 @@
 {% assign selected_stop = trmnl.plugin_settings.custom_fields_values.stopid | default: "" | strip %}
 {% assign selected_route = trmnl.plugin_settings.custom_fields_values.routeid | default: "" | strip %}
 {% assign departure_count = departures.size | default: 0 %}
+{% assign entity_count = entity.size | default: 0 %}
 <div class="layout flex flex--top">
   <table class="table table--xsmall">
     <thead>
@@ -43,7 +44,7 @@
       {% endif %}
       {% endfor %}
       {% endif %}
-      {% if row_count == 0 and entity and entity.size > 0 %}
+      {% if row_count == 0 and entity_count > 0 %}
       {% for item in entity %}
       {% assign v = item.vehicle %}
       {% if v %}
@@ -59,13 +60,16 @@
       {% assign headsign = item.schedule.headsign | default: item.trip_details.headsign | default: "-" %}
       {% assign stop_matches = true %}
       {% assign route_matches = true %}
-      {% if selected_stop != "" and matched_stop_id != selected_stop and matched_stop_station_id != selected_stop and next_stop_id != selected_stop and next_stop_station_id != selected_stop %}
+      {% if selected_stop != "" %}
+      {% if matched_stop_id != selected_stop and matched_stop_station_id != selected_stop and next_stop_id != selected_stop and next_stop_station_id != selected_stop %}
       {% assign stop_matches = false %}
+      {% endif %}
       {% endif %}
       {% if selected_route != "" and route_id != selected_route %}
       {% assign route_matches = false %}
       {% endif %}
-      {% if stop_matches and route_matches and vehicle_timestamp >= stale_cutoff_epoch %}
+      {% if stop_matches and route_matches %}
+      {% if vehicle_timestamp >= stale_cutoff_epoch %}
       {% if row_count >= 6 %}{% break %}{% endif %}
       <tr>
         <td><span class="label">{{ route_name }}</span></td>
@@ -76,6 +80,7 @@
         <td colspan="3"><span class="label label--small">To {{ headsign }}</span></td>
       </tr>
       {% assign row_count = row_count | plus: 1 %}
+      {% endif %}
       {% endif %}
       {% endif %}
       {% endfor %}
