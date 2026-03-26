@@ -21,26 +21,26 @@ custom_fields:
   help_text: Required because the PTV feed is protobuf, not JSON
 - keyname: stopid
   field_type: string
-  name: PTV Stop ID
-  description: Optional stop filter using the scheduled GTFS stop_id matched from the live train trip
-  placeholder: '11221'
+  name: Filter Stop ID
+  description: Optional filter entered in the plugin settings screen. Use a platform stop ID like 12236, or a station group ID like vic:rail:RWD.
+  placeholder: '12236'
   optional: true
-  help_text: Leave blank to show all stops from the feed
+  help_text: Add this in the plugin custom fields. Leave blank to show all trains. Use the published stop finder page to look up IDs.
 - keyname: routeid
   field_type: string
-  name: PTV Route ID
-  description: Optional route filter using vehicle.trip.route_id
-  placeholder: '1'
+  name: Filter Route ID
+  description: Optional filter entered in the plugin settings screen using the exact live GTFS route_id value from the feed.
+  placeholder: Leave blank unless needed
   optional: true
-  help_text: Leave blank to show all routes from the feed
+  help_text: Add this in the plugin custom fields. Leave blank to show all routes.
 - keyname: stalemins
   field_type: number
-  placeholder: 10
-  default: 10
+  placeholder: 20
+  default: 20
   name: Hide Stale Updates After
   description: Hide vehicles whose position timestamp is older than this number of minutes
   min: 1
   max: 120
-  help_text: Min 1, Max 120 mins
+  help_text: Use 20+ for GitHub Actions mode because off-peak snapshots update every 15 minutes
 name: Victoria Metro Train Status (PTV)
 refresh_interval: 1

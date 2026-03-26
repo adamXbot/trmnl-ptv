@@ -369,10 +369,15 @@ class GtfsStaticIndex
     stop_times_with_epoch = stop_times.map do |stop_time|
       stop_epoch = gtfs_time_to_epoch(trip_start_date, stop_time['departure_time'])
       stop = @stops[stop_time['stop_id']] || {}
+      parent_stop = stop['parent_station'] && @stops[stop['parent_station']]
       stop_time.merge(
         'scheduled_epoch' => stop_epoch,
         'scheduled_local_time' => Time.at(stop_epoch).localtime.strftime('%I:%M %P'),
         'stop_name' => stop['stop_name'],
+        'platform_code' => stop['platform_code'],
+        'parent_station' => stop['parent_station'],
+        'station_id' => parent_stop ? parent_stop['stop_id'] : stop['stop_id'],
+        'station_name' => parent_stop ? parent_stop['stop_name'] : stop['stop_name'],
         'lat' => stop['lat'],
         'lon' => stop['lon']
       )
@@ -387,6 +392,10 @@ class GtfsStaticIndex
     base_schedule(trip_id, trip_info, route_info).merge(
       'matched_stop_id' => current_stop['stop_id'],
       'matched_stop_name' => current_stop['stop_name'] || current_stop['stop_id'],
+      'matched_stop_platform_code' => current_stop['platform_code'],
+      'matched_stop_parent_station' => current_stop['parent_station'],
+      'matched_stop_station_id' => current_stop['station_id'],
+      'matched_stop_station_name' => current_stop['station_name'],
       'matched_stop_sequence' => current_stop['stop_sequence'],
       'scheduled_time_local' => current_stop['scheduled_local_time'],
       'scheduled_epoch' => current_stop['scheduled_epoch'],
@@ -396,6 +405,8 @@ class GtfsStaticIndex
       'status_text' => punctuality_text(delay_seconds),
       'next_stop_id' => next_stop && next_stop['stop_id'],
       'next_stop_name' => next_stop && (next_stop['stop_name'] || next_stop['stop_id']),
+      'next_stop_station_id' => next_stop && next_stop['station_id'],
+      'next_stop_station_name' => next_stop && next_stop['station_name'],
       'next_scheduled_time_local' => next_stop && next_stop['scheduled_local_time']
     ).compact
   end

@@ -128,6 +128,21 @@ For Ringwood, the useful matches are:
 
 For the TRMNL plugin `stopid`, you should usually use the platform stop ID, not the station group ID. For example, if you want Ringwood platform 1, set `stopid` to `12236`.
 
+### Plugin Filters
+
+In the TRMNL plugin settings screen, add your filters in the custom fields:
+
+- `stopid`: use a platform stop ID like `12236` for Ringwood platform 1, or a station group ID like `vic:rail:RWD` if you want to match the station more broadly
+- `routeid`: optional exact `vehicle.trip.route_id` filter from the live feed; leave this blank unless you specifically want to narrow the results
+- `stalemins`: if you are using the GitHub Actions snapshot mode, use at least `20` minutes so off-peak `15` minute snapshots do not get filtered out as stale
+
+If you are not seeing any rows in the plugin:
+
+- leave `routeid` blank first
+- try a platform stop ID before a station group ID
+- increase `stalemins` to `20` or `30`
+- confirm the `proxyurl` points to the raw `ptv-metro.json` URL, not the stop finder page URL
+
 If you are running the local proxy instead, you can still search locally with:
 
 ```bash
@@ -143,11 +158,22 @@ That endpoint returns the same stop lookup results as the published page.
 3. Add `PTV_KEY_ID` as a repository secret.
 4. Optionally add `PTV_SUBSCRIPTION_KEY` if you want to use that auth path instead.
 5. Enable GitHub Actions on the fork.
-6. In GitHub `Settings` -> `Pages`, set the source to deploy from branch `data` and folder `/ (root)`.
-7. Run the [publish-ptv-data.yml](/Users/user/Downloads/ptv-victoria/.github/workflows/publish-ptv-data.yml) workflow once with `workflow_dispatch`.
-8. Confirm the workflow creates a `data` branch containing `ptv-metro.json`, `stops.json`, and `index.html`.
-9. Set the TRMNL plugin `proxyurl` to `https://raw.githubusercontent.com/<your-user>/<your-repo>/data/ptv-metro.json`.
-10. Open the stop finder at `https://<your-user>.github.io/<your-repo>/` to look up station/platform stop IDs.
+6. Run the [publish-ptv-data.yml](/Users/user/Downloads/ptv-victoria/.github/workflows/publish-ptv-data.yml) workflow once with `workflow_dispatch`.
+7. Confirm the workflow creates a `data` branch containing `ptv-metro.json`, `stops.json`, and `index.html`.
+8. Open GitHub `Settings` -> `Pages`.
+9. Under `Build and deployment`, choose `Deploy from a branch`.
+10. In the branch dropdown, select `data`.
+11. In the folder dropdown, select `/ (root)`.
+12. Click `Save`.
+13. Wait for GitHub Pages to finish publishing. GitHub will show the site URL near the top of the Pages settings screen once it is ready.
+14. Set the TRMNL plugin `proxyurl` to `https://raw.githubusercontent.com/<your-user>/<your-repo>/data/ptv-metro.json`.
+15. Open the stop finder at `https://<your-user>.github.io/<your-repo>/` to look up station/platform stop IDs.
+
+Notes for GitHub Pages:
+
+- The `data` branch usually will not appear in the Pages branch dropdown until after the first successful workflow run creates it.
+- If the site URL returns `404` immediately after saving, wait a minute or two and refresh the Pages settings screen.
+- Keep the repo public if you want the stop finder page and raw JSON URL to be reachable without authentication.
 
 ### GitHub Token Notes
 
