@@ -15,7 +15,34 @@
     </thead>
     <tbody>
       {% assign row_count = 0 %}
-      {% if entity and entity.size > 0 %}
+      {% if selected_stop != "" and departures and departures.size > 0 %}
+      {% for departure in departures %}
+      {% if row_count >= 6 %}{% break %}{% endif %}
+      {% assign route_id = departure.route_id | default: "-" | append: "" %}
+      {% assign departure_stop_id = departure.stop_id | default: "-" | append: "" %}
+      {% assign departure_station_id = departure.station_id | default: "" | append: "" %}
+      {% assign route_matches = true %}
+      {% assign stop_matches = true %}
+      {% if selected_stop != "" and departure_stop_id != selected_stop and departure_station_id != selected_stop %}
+      {% assign stop_matches = false %}
+      {% endif %}
+      {% if selected_route != "" and route_id != selected_route %}
+      {% assign route_matches = false %}
+      {% endif %}
+      {% if stop_matches and route_matches %}
+      <tr>
+        <td><span class="label">{{ departure.route_name | default: route_id }}</span></td>
+        <td><span class="label">{{ departure.stop_name }}{% if departure.platform_code %} P{{ departure.platform_code }}{% endif %}</span></td>
+        <td><span class="label">{% if departure.live_status_text %}{{ departure.scheduled_time_local }} • {{ departure.live_status_text }}{% else %}{{ departure.scheduled_time_local }} scheduled{% endif %}</span></td>
+      </tr>
+      <tr>
+        <td colspan="3"><span class="label label--small">To {{ departure.headsign | default: "-" }}</span></td>
+      </tr>
+      {% assign row_count = row_count | plus: 1 %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% if row_count == 0 and entity and entity.size > 0 %}
       {% for item in entity %}
       {% assign v = item.vehicle %}
       {% if v %}
@@ -23,13 +50,15 @@
       {% assign vehicle_timestamp = v.timestamp | plus: 0 %}
       {% assign matched_stop_id = item.schedule.matched_stop_id | default: v.stop_id | default: "-" | append: "" %}
       {% assign matched_stop_station_id = item.schedule.matched_stop_station_id | default: item.schedule.matched_stop_parent_station | default: "" | append: "" %}
+      {% assign next_stop_id = item.schedule.next_stop_id | default: "" | append: "" %}
+      {% assign next_stop_station_id = item.schedule.next_stop_station_id | default: "" | append: "" %}
       {% assign matched_stop_name = item.schedule.matched_stop_name | default: matched_stop_id %}
       {% assign route_name = item.schedule.route_short_name | default: item.route.short_name | default: route_id %}
       {% assign status_text = item.schedule.status_text | default: "No live status" %}
       {% assign headsign = item.schedule.headsign | default: item.trip_details.headsign | default: "-" %}
       {% assign stop_matches = true %}
       {% assign route_matches = true %}
-      {% if selected_stop != "" and matched_stop_id != selected_stop and matched_stop_station_id != selected_stop %}
+      {% if selected_stop != "" and matched_stop_id != selected_stop and matched_stop_station_id != selected_stop and next_stop_id != selected_stop and next_stop_station_id != selected_stop %}
       {% assign stop_matches = false %}
       {% endif %}
       {% if selected_route != "" and route_id != selected_route %}
@@ -57,7 +86,7 @@
             {% if meta.error and meta.error.message %}
             Proxy error: {{ meta.error.message }}
             {% else %}
-            No live matches. Try a platform stop ID, leave route blank, or increase stale minutes.
+            No scheduled or live matches. Try a platform stop ID, leave route blank, or increase stale minutes.
             {% endif %}
           </span>
         </td>
@@ -70,7 +99,7 @@
   {% if meta.error and meta.error.type %}
   {{ meta.error.type }}
   {% else %}
-  Add stopid and routeid in the plugin custom fields.
+  Selected stops show scheduled departures first, with live status overlaid when available.
   {% endif %}
 </span>
 <div class="title_bar">

@@ -210,6 +210,8 @@ end
 class GtfsStaticIndex
   DEFAULT_GTFS_PATH = GtfsScheduleBootstrap::DEFAULT_GTFS_PATH
   TIMEZONE = 'Australia/Melbourne'
+  LOOKAHEAD_DAYS = 2
+  DEPARTURES_PER_STOP = 3
 
   attr_reader :gtfs_path
 
@@ -219,6 +221,9 @@ class GtfsStaticIndex
     @routes = {}
     @trips = {}
     @stop_times_by_trip = Hash.new { |hash, key| hash[key] = [] }
+    @stop_times_by_stop = Hash.new { |hash, key| hash[key] = [] }
+    @calendar_by_service = {}
+    @calendar_exceptions = Hash.new { |hash, key| hash[key] = {} }
     ENV['TZ'] ||= TIMEZONE
     load_data!
   end
@@ -285,6 +290,49 @@ class GtfsStaticIndex
       end
   end
 
+  def upcoming_departures(now: local_now, live_entities: [])
+    live_by_trip_id = build_live_entity_index(live_entities)
+    departures = []
+    per_stop_count = Hash.new(0)
+
+    each_service_date(now.to_date) do |service_date|
+      @stop_times_by_stop.each do |stop_id, stop_times|
+        stop_times.each do |stop_time|
+          trip_info = @trips[stop_time['trip_id']] || {}
+          next unless service_active?(trip_info['service_id'], service_date)
+
+          scheduled_epoch = gtfs_time_to_epoch(service_date.strftime('%Y%m%d'), stop_time['departure_time'])
+          next if scheduled_epoch < now.to_i
+
+          stop = @stops[stop_id] || {}
+          station_id = stop['parent_station'].to_s.empty? ? stop_id : stop['parent_station']
+          next if per_stop_count[stop_id] >= DEPARTURES_PER_STOP
+          next if per_stop_count[station_id] >= DEPARTURES_PER_STOP
+
+          route_info = @routes[trip_info['route_id']] || {}
+          live_entity = live_by_trip_id[stop_time['trip_id']]
+
+          departures << build_departure_record(
+            stop_time: stop_time,
+            stop: stop,
+            trip_info: trip_info,
+            route_info: route_info,
+            service_date: service_date,
+            scheduled_epoch: scheduled_epoch,
+            live_entity: live_entity
+          )
+
+          per_stop_count[stop_id] += 1
+          per_stop_count[station_id] += 1
+        end
+      end
+
+      break if departures.any?
+    end
+
+    departures.sort_by { |departure| departure['scheduled_epoch'] }
+  end
+
   private
 
   def load_data!
@@ -292,6 +340,8 @@ class GtfsStaticIndex
     load_stops!
     load_trips!
     load_stop_times!
+    load_calendar!
+    load_calendar_dates!
   end
 
   def csv_each(path)
@@ -348,17 +398,52 @@ class GtfsStaticIndex
 
   def load_stop_times!
     csv_each(File.join(@gtfs_path, 'stop_times.txt')) do |row|
-      @stop_times_by_trip[row['trip_id']] << {
+      stop_time = {
         'stop_id' => row['stop_id'],
+        'trip_id' => row['trip_id'],
         'stop_sequence' => row['stop_sequence'].to_i,
         'arrival_time' => row['arrival_time'],
         'departure_time' => row['departure_time'],
         'shape_dist_traveled' => row['shape_dist_traveled'].to_f
       }
+      @stop_times_by_trip[row['trip_id']] << stop_time
+      @stop_times_by_stop[row['stop_id']] << stop_time
     end
 
     @stop_times_by_trip.each_value do |stop_times|
       stop_times.sort_by! { |stop_time| stop_time['stop_sequence'] }
+    end
+
+    @stop_times_by_stop.each_value do |stop_times|
+      stop_times.sort_by! { |stop_time| stop_time['departure_time'] }
+    end
+  end
+
+  def load_calendar!
+    path = File.join(@gtfs_path, 'calendar.txt')
+    return unless File.exist?(path)
+
+    csv_each(path) do |row|
+      @calendar_by_service[row['service_id']] = {
+        'monday' => row['monday'] == '1',
+        'tuesday' => row['tuesday'] == '1',
+        'wednesday' => row['wednesday'] == '1',
+        'thursday' => row['thursday'] == '1',
+        'friday' => row['friday'] == '1',
+        'saturday' => row['saturday'] == '1',
+        'sunday' => row['sunday'] == '1',
+        'start_date' => row['start_date'],
+        'end_date' => row['end_date']
+      }
+    end
+  end
+
+  def load_calendar_dates!
+    path = File.join(@gtfs_path, 'calendar_dates.txt')
+    return unless File.exist?(path)
+
+    csv_each(path) do |row|
+      @calendar_exceptions[row['service_id']][row['date']] = row['exception_type'].to_i
     end
   end
 
@@ -476,6 +561,63 @@ class GtfsStaticIndex
     a = Math.sin(dlat / 2)**2 + Math.cos(lat1_rad) * Math.cos(lat2_rad) * Math.sin(dlon / 2)**2
     c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
     rm * c
+  end
+
+  def build_live_entity_index(live_entities)
+    Array(live_entities).each_with_object({}) do |entity, index|
+      trip_id = entity.dig('vehicle', 'trip', 'trip_id')
+      index[trip_id] = entity if trip_id
+    end
+  end
+
+  def build_departure_record(stop_time:, stop:, trip_info:, route_info:, service_date:, scheduled_epoch:, live_entity:)
+    {
+      'stop_id' => stop_time['stop_id'],
+      'station_id' => stop['parent_station'].to_s.empty? ? stop_time['stop_id'] : stop['parent_station'],
+      'stop_name' => stop['stop_name'] || stop_time['stop_id'],
+      'station_name' => parent_station_for(stop)&.dig('stop_name') || stop['stop_name'] || stop_time['stop_id'],
+      'platform_code' => stop['platform_code'],
+      'trip_id' => stop_time['trip_id'],
+      'route_id' => trip_info['route_id'],
+      'route_name' => route_info['short_name'] || route_info['long_name'] || trip_info['route_id'],
+      'headsign' => trip_info['headsign'],
+      'service_date' => service_date.strftime('%Y%m%d'),
+      'scheduled_epoch' => scheduled_epoch,
+      'scheduled_time_local' => Time.at(scheduled_epoch).localtime.strftime('%I:%M %P'),
+      'live_status' => live_entity && live_entity.dig('schedule', 'status'),
+      'live_status_text' => live_entity && live_entity.dig('schedule', 'status_text'),
+      'live_reference_stop_name' => live_entity && (live_entity.dig('schedule', 'matched_stop_name') || live_entity.dig('schedule', 'next_stop_name')),
+      'live_vehicle_timestamp' => live_entity && live_entity.dig('vehicle', 'timestamp')
+    }.compact
+  end
+
+  def each_service_date(start_date)
+    LOOKAHEAD_DAYS.times do |offset|
+      yield(start_date + offset)
+    end
+  end
+
+  def service_active?(service_id, date)
+    return false if service_id.to_s.empty?
+
+    date_key = date.strftime('%Y%m%d')
+    exception_type = @calendar_exceptions[service_id][date_key]
+    return true if exception_type == 1
+    return false if exception_type == 2
+
+    calendar = @calendar_by_service[service_id]
+    return false unless calendar
+    return false if date_key < calendar['start_date'] || date_key > calendar['end_date']
+
+    calendar[date.strftime('%A').downcase]
+  end
+
+  def local_now
+    previous_tz = ENV['TZ']
+    ENV['TZ'] = TIMEZONE
+    Time.now
+  ensure
+    ENV['TZ'] = previous_tz
   end
 
   def build_stop_lookup_result(stop)
@@ -704,6 +846,7 @@ class PtvSnapshotGenerator
     feed = FeedMessage.decode(response.body)
     payload = normalize_keys(feed.to_h)
     payload['entity'] = Array(payload['entity']).map { |entity| @gtfs_index.enrich_entity(entity) }
+    payload['departures'] = @gtfs_index.upcoming_departures(live_entities: payload['entity'])
     payload['meta'] = base_meta.merge(
       'cache_ttl_seconds' => @cache_ttl
     )

@@ -126,7 +126,12 @@ For Ringwood, the useful matches are:
 - `12237` for `Ringwood Station` platform `2`
 - `vic:rail:RWD` for the station group record
 
-For the TRMNL plugin `stopid`, you should usually use the platform stop ID, not the station group ID. For example, if you want Ringwood platform 1, set `stopid` to `12236`.
+How to choose between them:
+
+- use a platform stop ID like `12236` when you want one direction of travel, such as Ringwood platform 1 toward the city
+- use a station group ID like `vic:rail:RWD` when you want the whole station and are happy to see both directions together
+
+For the TRMNL plugin `stopid`, `12236` is the better choice when you want a bookmark for one platform, while `vic:rail:RWD` is the better choice when you want a bookmark for the broader station.
 
 ### Plugin Filters
 
@@ -135,6 +140,13 @@ In the TRMNL plugin settings screen, add your filters in the custom fields:
 - `stopid`: use a platform stop ID like `12236` for Ringwood platform 1, or a station group ID like `vic:rail:RWD` if you want to match the station more broadly
 - `routeid`: optional exact `vehicle.trip.route_id` filter from the live feed; leave this blank unless you specifically want to narrow the results
 - `stalemins`: if you are using the GitHub Actions snapshot mode, use at least `20` minutes so off-peak `15` minute snapshots do not get filtered out as stale
+
+The plugin now treats `stopid` as a station-or-platform selector:
+
+- if you enter a platform stop ID such as `12236`, it shows the next scheduled departures for that platform, which is best for one direction
+- if you enter a station group ID such as `vic:rail:RWD`, it shows the next scheduled departures for that station, which is best for both directions together
+- if live data exists for the same trip, the timetable row is enriched with live status such as `On time` or `2 min delayed`
+- if there is no live match yet, the row still shows the next scheduled departure time from the static GTFS timetable
 
 If you are not seeing any rows in the plugin:
 

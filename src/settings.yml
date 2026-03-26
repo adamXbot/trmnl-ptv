@@ -21,7 +21,7 @@ custom_fields:
   help_text: Required because the PTV feed is protobuf, not JSON
 - keyname: stopid
   field_type: string
-  name: Filter Stop ID
+  name: Station / Platform ID
   description: Optional filter entered in the plugin settings screen. Use a platform stop ID like 12236, or a station group ID like vic:rail:RWD.
   placeholder: '12236'
   optional: true
