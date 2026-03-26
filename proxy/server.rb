@@ -8,7 +8,6 @@ require 'tmpdir'
 require 'tempfile'
 require 'time'
 require 'uri'
-require 'webrick'
 
 require 'google/protobuf'
 
@@ -681,6 +680,8 @@ class PtvVehicleProxy
   end
 
   def run
+    require 'webrick'
+
     server = WEBrick::HTTPServer.new(
       Port: @port,
       AccessLog: [],
