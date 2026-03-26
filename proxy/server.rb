@@ -211,6 +211,8 @@ class GtfsStaticIndex
   DEFAULT_GTFS_PATH = GtfsScheduleBootstrap::DEFAULT_GTFS_PATH
   TIMEZONE = 'Australia/Melbourne'
 
+  attr_reader :gtfs_path
+
   def initialize(gtfs_path = ENV.fetch('PTV_GTFS_PATH', DEFAULT_GTFS_PATH))
     @gtfs_path = gtfs_path
     @stops = {}
@@ -247,6 +249,40 @@ class GtfsStaticIndex
       'trip_details' => trip_info,
       'schedule' => schedule
     )
+  end
+
+  def find_stops(query, limit: 20)
+    needle = normalize_stop_text(query)
+    return [] if needle.empty?
+
+    stop_lookup_records
+      .select do |stop|
+        haystack = [
+          stop['stop_id'],
+          stop['stop_name'],
+          stop['station_name'],
+          stop['parent_station'],
+          stop['platform_label']
+        ].compact.join(' ')
+        normalize_stop_text(haystack).include?(needle)
+      end
+      .map { |stop| stop.merge('match_score' => stop_lookup_score(stop, needle)) }
+      .sort_by { |result| stop_lookup_sort_key(result) }
+      .first(limit)
+  end
+
+  def stop_lookup_records
+    @stops.values
+      .map { |stop| build_stop_lookup_result(stop) }
+      .compact
+      .sort_by do |result|
+        [
+          result['station_name'].to_s,
+          result['station_stop'] ? 0 : 1,
+          result['platform_code'].to_s,
+          result['stop_id'].to_s
+        ]
+      end
   end
 
   private
@@ -429,6 +465,67 @@ class GtfsStaticIndex
     a = Math.sin(dlat / 2)**2 + Math.cos(lat1_rad) * Math.cos(lat2_rad) * Math.sin(dlon / 2)**2
     c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
     rm * c
+  end
+
+  def build_stop_lookup_result(stop)
+    parent = parent_station_for(stop)
+    station_name = parent && parent['stop_name'] != stop['stop_name'] ? parent['stop_name'] : stop['stop_name']
+
+    {
+      'stop_id' => stop['stop_id'],
+      'stop_name' => stop['stop_name'],
+      'station_name' => station_name,
+      'platform_code' => stop['platform_code'],
+      'platform_label' => platform_label(stop),
+      'parent_station' => stop['parent_station'],
+      'station_id' => parent ? parent['stop_id'] : stop['stop_id'],
+      'station_stop' => station_record?(stop)
+    }.compact
+  end
+
+  def stop_lookup_sort_key(result)
+    [
+      result['match_score'],
+      result['station_stop'] ? 0 : 1,
+      result['station_name'].to_s,
+      result['platform_code'].to_s,
+      result['stop_id'].to_s
+    ]
+  end
+
+  def stop_lookup_score(stop, needle)
+    name = normalize_stop_text(stop['stop_name'])
+    parent_id = normalize_stop_text(stop['parent_station'])
+    stop_id = normalize_stop_text(stop['stop_id'])
+    station = normalize_stop_text(parent_station_for(stop)&.dig('stop_name'))
+
+    return 0 if name == needle || station == needle || stop_id == needle
+    return 1 if name.start_with?(needle) || station.start_with?(needle)
+    return 2 if parent_id.include?(needle)
+
+    3
+  end
+
+  def parent_station_for(stop)
+    parent_id = stop['parent_station']
+    return nil if parent_id.to_s.empty?
+
+    @stops[parent_id]
+  end
+
+  def station_record?(stop)
+    stop['parent_station'].to_s.empty?
+  end
+
+  def platform_label(stop)
+    code = stop['platform_code'].to_s.strip
+    return nil if code.empty?
+
+    "Platform #{code}"
+  end
+
+  def normalize_stop_text(value)
+    value.to_s.downcase.gsub(/[^a-z0-9]+/, ' ').strip
   end
 end
 
@@ -677,6 +774,7 @@ class PtvVehicleProxy
     )
     @cache = nil
     @cache_fetched_at = nil
+    @stop_index = nil
   end
 
   def run
@@ -708,6 +806,16 @@ class PtvVehicleProxy
       write_json(res, 200, payload)
     end
 
+    server.mount_proc('/ptv/stops/search') do |req, res|
+      query = req.query['q'].to_s
+      matches = stop_index.find_stops(query)
+      write_json(res, 200, {
+        'query' => query,
+        'matches' => matches,
+        'gtfs_path' => stop_index.gtfs_path
+      })
+    end
+
     server.start
   end
 
@@ -724,6 +832,10 @@ class PtvVehicleProxy
     res.status = status
     res['Content-Type'] = 'application/json'
     res.body = JSON.pretty_generate(payload)
+  end
+
+  def stop_index
+    @stop_index ||= GtfsStaticIndex.new(@generator.gtfs_path)
   end
 end
 

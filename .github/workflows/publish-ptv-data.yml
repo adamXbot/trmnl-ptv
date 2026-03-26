@@ -54,7 +54,15 @@ jobs:
           BUNDLE_PATH: vendor/bundle-ci
         run: bundle exec ruby bin/generate_snapshot.rb "$RUNNER_TEMP/ptv-metro.json"
 
-      - name: Publish snapshot to data branch
+      - name: Generate stop index
+        if: steps.gate.outputs.should_run == 'true'
+        working-directory: proxy
+        env:
+          BUNDLE_FORCE_RUBY_PLATFORM: "false"
+          BUNDLE_PATH: vendor/bundle-ci
+        run: bundle exec ruby bin/generate_stop_index.rb "$RUNNER_TEMP/stops.json"
+
+      - name: Publish data branch assets
         if: steps.gate.outputs.should_run == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -62,6 +70,7 @@ jobs:
           set -euo pipefail
 
           SNAPSHOT_PATH="$RUNNER_TEMP/ptv-metro.json"
+          STOP_INDEX_PATH="$RUNNER_TEMP/stops.json"
           DATA_DIR="$RUNNER_TEMP/data-branch"
           OLD_FILE="$RUNNER_TEMP/previous-ptv-metro.json"
           REPO_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
@@ -88,13 +97,19 @@ jobs:
           if [ -f "$OLD_FILE" ]; then
             CHANGED=$(cd "$GITHUB_WORKSPACE/proxy" && BUNDLE_FORCE_RUBY_PLATFORM=false BUNDLE_PATH=vendor/bundle-ci bundle exec ruby bin/snapshot_changed.rb "$OLD_FILE" "$SNAPSHOT_PATH")
             if [ "$CHANGED" != "true" ]; then
-              echo "Snapshot content unchanged after stripping volatile fields; skipping commit."
-              exit 0
+              cp "$OLD_FILE" ./ptv-metro.json
+            else
+              cp "$SNAPSHOT_PATH" ./ptv-metro.json
             fi
+          else
+            cp "$SNAPSHOT_PATH" ./ptv-metro.json
           fi
 
-          cp "$SNAPSHOT_PATH" ./ptv-metro.json
-          git add ptv-metro.json
+          cp "$STOP_INDEX_PATH" ./stops.json
+          cp "$GITHUB_WORKSPACE/proxy/static/index.html" ./index.html
+          touch .nojekyll
+
+          git add ptv-metro.json stops.json index.html .nojekyll
 
           if git diff --cached --quiet; then
             echo "No staged changes for data branch."

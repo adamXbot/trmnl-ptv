@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PTV Stop Finder</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4f1e8;
+        --panel: #fffdf7;
+        --ink: #10231a;
+        --muted: #5d6f67;
+        --line: #d6d0c1;
+        --accent: #0d7a5f;
+        --accent-soft: #dff3ec;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, #fff9d9 0, transparent 32%),
+          linear-gradient(180deg, #f8f5ed 0%, var(--bg) 100%);
+        color: var(--ink);
+      }
+
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+      }
+
+      .hero {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 16px 40px rgba(16, 35, 26, 0.08);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .search {
+        margin-top: 20px;
+        display: grid;
+        gap: 12px;
+      }
+
+      input {
+        width: 100%;
+        padding: 16px 18px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        font-size: 1rem;
+        background: #fff;
+      }
+
+      .meta {
+        margin-top: 10px;
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+
+      .results {
+        margin-top: 24px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+
+      .row {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .stop-id {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 1.15rem;
+        font-weight: 700;
+      }
+
+      button.copy {
+        border: 0;
+        background: var(--accent);
+        color: #fff;
+        padding: 10px 14px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .hint {
+        margin-top: 10px;
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      .empty {
+        padding: 24px;
+        border: 1px dashed var(--line);
+        border-radius: 18px;
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.55);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <h1>Find Your PTV Stop ID</h1>
+        <p>Search for a station like Ringwood, then copy the platform stop ID you want to use in the TRMNL plugin.</p>
+        <div class="search">
+          <input id="query" type="search" placeholder="Try Ringwood" autocomplete="off">
+          <p class="meta" id="status">Loading stop list…</p>
+        </div>
+      </section>
+
+      <section class="results" id="results"></section>
+    </main>
+
+    <script>
+      const statusEl = document.getElementById('status');
+      const queryEl = document.getElementById('query');
+      const resultsEl = document.getElementById('results');
+
+      let stops = [];
+
+      const params = new URLSearchParams(window.location.search);
+      const initialQuery = params.get('q') || 'Ringwood';
+      queryEl.value = initialQuery;
+
+      function normalize(value) {
+        return (value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+      }
+
+      function score(stop, needle) {
+        const stopName = normalize(stop.stop_name);
+        const stationName = normalize(stop.station_name);
+        const stopId = normalize(stop.stop_id);
+        const parentStation = normalize(stop.parent_station);
+
+        if (stopName === needle || stationName === needle || stopId === needle) return 0;
+        if (stopName.startsWith(needle) || stationName.startsWith(needle)) return 1;
+        if (parentStation.includes(needle)) return 2;
+        return 3;
+      }
+
+      function filterStops(query) {
+        const needle = normalize(query);
+        if (!needle) return [];
+
+        return stops
+          .filter((stop) => {
+            const haystack = [
+              stop.stop_id,
+              stop.stop_name,
+              stop.station_name,
+              stop.parent_station,
+              stop.platform_label
+            ].join(' ');
+            return normalize(haystack).includes(needle);
+          })
+          .map((stop) => ({ ...stop, match_score: score(stop, needle) }))
+          .sort((a, b) => {
+            if (a.match_score !== b.match_score) return a.match_score - b.match_score;
+            if (a.station_stop !== b.station_stop) return a.station_stop ? -1 : 1;
+            return (a.platform_code || '').localeCompare(b.platform_code || '') || a.stop_id.localeCompare(b.stop_id);
+          })
+          .slice(0, 50);
+      }
+
+      async function copyStopId(stopId, button) {
+        try {
+          await navigator.clipboard.writeText(stopId);
+          const old = button.textContent;
+          button.textContent = 'Copied';
+          setTimeout(() => { button.textContent = old; }, 1200);
+        } catch (_error) {
+          window.prompt('Copy this stop ID:', stopId);
+        }
+      }
+
+      function render(query) {
+        const matches = filterStops(query);
+        if (!query.trim()) {
+          resultsEl.innerHTML = '<div class="empty">Type a station name to see matching station and platform stop IDs.</div>';
+          return;
+        }
+
+        if (matches.length === 0) {
+          resultsEl.innerHTML = '<div class="empty">No matches found. Try a broader station name.</div>';
+          return;
+        }
+
+        resultsEl.innerHTML = '';
+        matches.forEach((stop) => {
+          const card = document.createElement('article');
+          card.className = 'card';
+          const badge = stop.station_stop ? 'Station group' : 'Platform stop';
+          const platform = stop.platform_label ? ` · ${stop.platform_label}` : '';
+          const hint = stop.station_stop
+            ? 'Use a platform stop ID below this station when you want a specific platform in TRMNL.'
+            : 'This is usually the value you want for the TRMNL plugin stopid field.';
+
+          card.innerHTML = `
+            <span class="pill">${badge}</span>
+            <div class="row">
+              <div class="stop-id">${stop.stop_id}</div>
+              <button class="copy" type="button">Copy stop ID</button>
+            </div>
+            <div class="row">
+              <strong>${stop.station_name || stop.stop_name}</strong>
+              <span>${stop.stop_name}${platform}</span>
+            </div>
+            <p class="hint">${hint}</p>
+          `;
+
+          const button = card.querySelector('button.copy');
+          button.addEventListener('click', () => copyStopId(stop.stop_id, button));
+          resultsEl.appendChild(card);
+        });
+      }
+
+      queryEl.addEventListener('input', (event) => {
+        const value = event.target.value;
+        const nextUrl = new URL(window.location.href);
+        if (value.trim()) {
+          nextUrl.searchParams.set('q', value);
+        } else {
+          nextUrl.searchParams.delete('q');
+        }
+        window.history.replaceState({}, '', nextUrl);
+        render(value);
+      });
+
+      fetch('./stops.json')
+        .then((response) => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        })
+        .then((payload) => {
+          stops = payload.stops || [];
+          const generatedAt = payload.generated_at ? new Date(payload.generated_at).toLocaleString() : 'unknown';
+          statusEl.textContent = `Loaded ${stops.length} stops. Updated ${generatedAt}.`;
+          render(initialQuery);
+        })
+        .catch((error) => {
+          statusEl.textContent = `Could not load stops.json: ${error.message}`;
+          resultsEl.innerHTML = '<div class="empty">The stop list could not be loaded yet. Run the GitHub Action once to publish it.</div>';
+        });
+    </script>
+  </body>
+</html>

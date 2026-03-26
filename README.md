@@ -34,8 +34,10 @@ It:
 The same fetch/decode/enrich path is also exposed as a one-shot snapshot generator for CI:
 
 - [generate_snapshot.rb](/Users/user/Downloads/ptv-victoria/proxy/bin/generate_snapshot.rb)
+- [generate_stop_index.rb](/Users/user/Downloads/ptv-victoria/proxy/bin/generate_stop_index.rb)
 - [schedule_gate.rb](/Users/user/Downloads/ptv-victoria/proxy/bin/schedule_gate.rb)
 - [snapshot_changed.rb](/Users/user/Downloads/ptv-victoria/proxy/bin/snapshot_changed.rb)
+- [find_stop.rb](/Users/user/Downloads/ptv-victoria/proxy/bin/find_stop.rb)
 
 ## What This Version Shows
 
@@ -107,6 +109,33 @@ The templates assume your proxy returns GTFS Realtime data in JSON with the stan
 
 If [proxy/server.rb](/Users/user/Downloads/ptv-victoria/proxy/server.rb) does not find the GTFS files at `PTV_GTFS_PATH`, it will download the zip from `PTV_GTFS_ZIP_URL`, unzip it into `PTV_GTFS_DOWNLOAD_ROOT`, and then locate the extracted schedule directory automatically. By default these paths are relative to the current working directory where you start the proxy, such as `./data/gtfs/2`.
 
+### Finding Your Stop ID
+
+The easiest option for someone using the GitHub Actions mode is the published stop finder page on the `data` branch.
+
+After the workflow runs and GitHub Pages is enabled for the `data` branch root, open:
+
+`https://<your-user>.github.io/<your-repo>/`
+
+Then search for a station name like `Ringwood`. The page will load `stops.json`, filter it in the browser, and show the station record plus the platform stop IDs you can copy into the TRMNL plugin.
+
+For Ringwood, the useful matches are:
+
+- `12235` for `Ringwood Station` platform `3`
+- `12236` for `Ringwood Station` platform `1`
+- `12237` for `Ringwood Station` platform `2`
+- `vic:rail:RWD` for the station group record
+
+For the TRMNL plugin `stopid`, you should usually use the platform stop ID, not the station group ID. For example, if you want Ringwood platform 1, set `stopid` to `12236`.
+
+If you are running the local proxy instead, you can still search locally with:
+
+```bash
+curl "http://localhost:9910/ptv/stops/search?q=Ringwood"
+```
+
+That endpoint returns the same stop lookup results as the published page.
+
 ### GitHub Actions Snapshot Mode
 
 1. Fork the repository.
@@ -114,9 +143,11 @@ If [proxy/server.rb](/Users/user/Downloads/ptv-victoria/proxy/server.rb) does no
 3. Add `PTV_KEY_ID` as a repository secret.
 4. Optionally add `PTV_SUBSCRIPTION_KEY` if you want to use that auth path instead.
 5. Enable GitHub Actions on the fork.
-6. Run the [publish-ptv-data.yml](/Users/user/Downloads/ptv-victoria/.github/workflows/publish-ptv-data.yml) workflow once with `workflow_dispatch`.
-7. Confirm the workflow creates a `data` branch containing `ptv-metro.json`.
-8. Set the TRMNL plugin `proxyurl` to `https://raw.githubusercontent.com/<your-user>/<your-repo>/data/ptv-metro.json`.
+6. In GitHub `Settings` -> `Pages`, set the source to deploy from branch `data` and folder `/ (root)`.
+7. Run the [publish-ptv-data.yml](/Users/user/Downloads/ptv-victoria/.github/workflows/publish-ptv-data.yml) workflow once with `workflow_dispatch`.
+8. Confirm the workflow creates a `data` branch containing `ptv-metro.json`, `stops.json`, and `index.html`.
+9. Set the TRMNL plugin `proxyurl` to `https://raw.githubusercontent.com/<your-user>/<your-repo>/data/ptv-metro.json`.
+10. Open the stop finder at `https://<your-user>.github.io/<your-repo>/` to look up station/platform stop IDs.
 
 ### GitHub Token Notes
 
@@ -162,6 +193,7 @@ Supported scheduling presets via workflow environment variables:
 
 - `GET /health`
 - `GET /ptv/metro/vehicle-positions`
+- `GET /ptv/stops/search?q=Ringwood`
 
 ## Proxy Environment Variables
 
@@ -186,3 +218,4 @@ Supported scheduling presets via workflow environment variables:
 - The proxy bundle is intentionally separate from the root TRMNL preview bundle so protobuf dependencies do not interfere with plugin preview tooling.
 - The proxy includes local Bundler config in [proxy/.bundle/config](/Users/user/Downloads/ptv-victoria/proxy/.bundle/config) to prefer a native build of `google-protobuf`, which helps on Apple Silicon machines.
 - GitHub Actions compares snapshots with volatile timestamps stripped, so the `data` branch only changes when the underlying payload meaningfully changes.
+- The GitHub Actions publish step also writes a static stop finder page to the `data` branch so users can search station names in the browser and copy the correct platform stop ID.
