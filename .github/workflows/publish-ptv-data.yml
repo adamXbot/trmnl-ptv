@@ -1,0 +1,96 @@
+name: Publish PTV Snapshot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Australia/Melbourne
+      BASE_INTERVAL_MINUTES: "15"
+      PEAK_INTERVAL_MINUTES: "5"
+      PEAK_START_LOCAL: "07:00"
+      PEAK_END_LOCAL: "09:00"
+      PEAK_DAYS: "mon,tue,wed,thu,fri"
+      PTV_SOURCE_MODE: github_action
+      PTV_KEY_ID: ${{ secrets.PTV_KEY_ID }}
+      PTV_SUBSCRIPTION_KEY: ${{ secrets.PTV_SUBSCRIPTION_KEY }}
+      FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
+      - name: Install proxy dependencies
+        working-directory: proxy
+        run: bundle install
+
+      - name: Evaluate schedule gate
+        id: gate
+        working-directory: proxy
+        run: bundle exec ruby bin/schedule_gate.rb
+
+      - name: Generate snapshot
+        if: steps.gate.outputs.should_run == 'true'
+        working-directory: proxy
+        run: bundle exec ruby bin/generate_snapshot.rb "$RUNNER_TEMP/ptv-metro.json"
+
+      - name: Publish snapshot to data branch
+        if: steps.gate.outputs.should_run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          SNAPSHOT_PATH="$RUNNER_TEMP/ptv-metro.json"
+          DATA_DIR="$RUNNER_TEMP/data-branch"
+          OLD_FILE="$RUNNER_TEMP/previous-ptv-metro.json"
+          REPO_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          mkdir -p "$DATA_DIR"
+          cd "$DATA_DIR"
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "$REPO_URL"
+
+          if git ls-remote --exit-code --heads origin data >/dev/null 2>&1; then
+            git fetch origin data
+            git checkout -B data FETCH_HEAD
+            if [ -f ptv-metro.json ]; then
+              cp ptv-metro.json "$OLD_FILE"
+            fi
+          else
+            git checkout --orphan data
+          fi
+
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+
+          if [ -f "$OLD_FILE" ]; then
+            CHANGED=$(cd "$GITHUB_WORKSPACE/proxy" && bundle exec ruby bin/snapshot_changed.rb "$OLD_FILE" "$SNAPSHOT_PATH")
+            if [ "$CHANGED" != "true" ]; then
+              echo "Snapshot content unchanged after stripping volatile fields; skipping commit."
+              exit 0
+            fi
+          fi
+
+          cp "$SNAPSHOT_PATH" ./ptv-metro.json
+          git add ptv-metro.json
+
+          if git diff --cached --quiet; then
+            echo "No staged changes for data branch."
+            exit 0
+          fi
+
+          git commit -m "Update PTV snapshot"
+          git push origin data

@@ -1,0 +1,5 @@
+.DS_Store
+proxy/data/
+proxy/tmp/
+*.lock
+/proxy/vendor

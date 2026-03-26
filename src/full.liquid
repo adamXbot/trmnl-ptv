@@ -1,0 +1,79 @@
+{% assign now_epoch = "now" | date: "%s" | plus: 0 %}
+{% assign stale_mins = trmnl.plugin_settings.custom_fields_values.stalemins | default: "10" | plus: 0 %}
+{% assign stale_secs = stale_mins | times: 60 %}
+{% assign stale_cutoff_epoch = now_epoch | minus: stale_secs %}
+{% assign selected_stop = trmnl.plugin_settings.custom_fields_values.stopid | default: "" | strip %}
+{% assign selected_route = trmnl.plugin_settings.custom_fields_values.routeid | default: "" | strip %}
+<div class="layout flex flex--top">
+  <table class="table table--small">
+    <thead>
+      <tr>
+        <th><span class="title title--small">Route</span></th>
+        <th><span class="title title--small">Towards</span></th>
+        <th><span class="title title--small">Stop</span></th>
+        <th><span class="title title--small">Status</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% assign row_count = 0 %}
+      {% if entity and entity.size > 0 %}
+      {% for item in entity %}
+      {% if row_count >= 12 %}{% break %}{% endif %}
+      {% assign v = item.vehicle %}
+      {% if v %}
+      {% assign route_id = v.trip.route_id | default: "-" | append: "" %}
+      {% assign vehicle_timestamp = v.timestamp | plus: 0 %}
+      {% assign matched_stop_id = item.schedule.matched_stop_id | default: v.stop_id | default: "-" | append: "" %}
+      {% assign matched_stop_name = item.schedule.matched_stop_name | default: matched_stop_id %}
+      {% assign route_name = item.schedule.route_short_name | default: item.route.short_name | default: route_id %}
+      {% assign headsign = item.schedule.headsign | default: item.trip_details.headsign | default: "-" %}
+      {% assign status_text = item.schedule.status_text | default: "No live status" %}
+      {% assign stop_matches = true %}
+      {% assign route_matches = true %}
+      {% if selected_stop != "" and matched_stop_id != selected_stop %}
+      {% assign stop_matches = false %}
+      {% endif %}
+      {% if selected_route != "" and route_id != selected_route %}
+      {% assign route_matches = false %}
+      {% endif %}
+      {% if stop_matches and route_matches and vehicle_timestamp >= stale_cutoff_epoch %}
+      <tr>
+        <td><span class="label">{{ route_name }}</span></td>
+        <td><span class="label">{{ headsign }}</span></td>
+        <td><span class="label">{{ matched_stop_name }}</span></td>
+        <td><span class="label">{{ status_text }}</span></td>
+      </tr>
+      {% assign row_count = row_count | plus: 1 %}
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% if row_count == 0 %}
+      <tr>
+        <td colspan="4">
+          <span class="label label--small">
+            {% if meta.error and meta.error.message %}
+            Proxy error: {{ meta.error.message }}
+            {% else %}
+            No live train updates matched the current filters.
+            {% endif %}
+          </span>
+        </td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+<span class="label label--small">
+  {% if meta.error and meta.error.type %}
+  Error type: {{ meta.error.type }}
+  {% else %}
+  Showing updates from the last {{ stale_mins }} minutes using live PTV data plus GTFS schedules.
+  {% endif %}
+</span>
+<div class="title_bar">
+  <span class="title">{{ name }}</span>
+  <span class="instance">
+    As at: {{ "now" | date: "%s" | plus: trmnl.user.utc_offset | date: "%I:%M %P" }}
+  </span>
+</div>

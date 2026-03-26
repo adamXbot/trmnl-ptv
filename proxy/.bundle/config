@@ -1,0 +1,3 @@
+---
+BUNDLE_PATH: "vendor/bundle-arm64"
+BUNDLE_FORCE_RUBY_PLATFORM: "true"
