@@ -143,7 +143,7 @@
     <main>
       <section class="hero">
         <h1>Find Your PTV Stop ID</h1>
-        <p>Search for a station like Ringwood, then copy the platform stop ID you want to use in the TRMNL plugin.</p>
+        <p>Search for a station like Ringwood, then choose whether you want one platform for a single direction of travel, or the whole station for both directions.</p>
         <div class="search">
           <input id="query" type="search" placeholder="Try Ringwood" autocomplete="off">
           <p class="meta" id="status">Loading stop list…</p>
@@ -231,11 +231,11 @@
         matches.forEach((stop) => {
           const card = document.createElement('article');
           card.className = 'card';
-          const badge = stop.station_stop ? 'Station group' : 'Platform stop';
+          const badge = stop.station_stop ? 'Whole station' : 'Single platform';
           const platform = stop.platform_label ? ` · ${stop.platform_label}` : '';
           const hint = stop.station_stop
-            ? 'Use a platform stop ID below this station when you want a specific platform in TRMNL.'
-            : 'This is usually the value you want for the TRMNL plugin stopid field.';
+            ? 'Bookmark this when you want the whole station in TRMNL, which is useful for seeing trains in both directions.'
+            : 'Bookmark this when you want one platform in TRMNL, which is useful for one direction such as Ringwood to the city.';
 
           card.innerHTML = `
             <span class="pill">${badge}</span>
