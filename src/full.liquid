@@ -4,6 +4,7 @@
 {% assign stale_cutoff_epoch = now_epoch | minus: stale_secs %}
 {% assign selected_stop = trmnl.plugin_settings.custom_fields_values.stopid | default: "" | strip %}
 {% assign selected_route = trmnl.plugin_settings.custom_fields_values.routeid | default: "" | strip %}
+{% assign departure_count = departures.size | default: 0 %}
 <div class="layout flex flex--top">
   <table class="table table--small">
     <thead>
@@ -16,7 +17,7 @@
     </thead>
     <tbody>
       {% assign row_count = 0 %}
-      {% if selected_stop != "" and departures and departures.size > 0 %}
+      {% if selected_stop != "" and departure_count > 0 %}
       {% for departure in departures %}
       {% if row_count >= 12 %}{% break %}{% endif %}
       {% assign route_id = departure.route_id | default: "-" | append: "" %}
@@ -37,7 +38,7 @@
         <td><span class="label">{{ departure.route_name | default: route_id }}</span></td>
         <td><span class="label">{{ departure.headsign | default: "-" }}</span></td>
         <td><span class="label">{{ departure_stop_name }}{% if platform_code != "" %} P{{ platform_code }}{% endif %}</span></td>
-        <td><span class="label">{% if departure.live_status_text %}{{ departure.scheduled_time_local }} • {{ departure.live_status_text }}{% else %}{{ departure.scheduled_time_local }} scheduled{% endif %}</span></td>
+        <td><span class="label">{% if departure.live_status_text != blank %}{{ departure.scheduled_time_local }} - {{ departure.live_status_text }}{% else %}{{ departure.scheduled_time_local }} scheduled{% endif %}</span></td>
       </tr>
       {% assign row_count = row_count | plus: 1 %}
       {% endif %}
