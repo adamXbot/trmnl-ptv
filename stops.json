@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-27T12:32:24Z",
+  "generated_at": "2026-03-27T18:01:56Z",
   "gtfs_path": "/home/runner/work/trmnl-ptv/trmnl-ptv/proxy/data/gtfs/2",
   "stops": [
     {
@@ -206,16 +206,6 @@
       "station_name": "Alphington Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:ALP",
-      "station_id": "vic:rail:ALP",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26103",
-      "stop_name": "Alphington Rail Replacement Bus Stop",
-      "station_name": "Alphington Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:ALP",
       "station_id": "vic:rail:ALP",
       "station_stop": false
@@ -1062,6 +1052,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26112",
+      "stop_name": "Batman Rail Replacement Bus Stop",
+      "station_name": "Batman Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:BAT",
+      "station_id": "vic:rail:BAT",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:BXR",
       "stop_name": "Baxter Railway Station",
       "station_name": "Baxter Railway Station",
@@ -1134,16 +1134,6 @@
       "station_name": "Beaconsfield Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:BFD",
-      "station_id": "vic:rail:BFD",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26115",
-      "stop_name": "Beaconsfield Rail Replacement Bus Stop",
-      "station_name": "Beaconsfield Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:BFD",
       "station_id": "vic:rail:BFD",
       "station_stop": false
@@ -4548,16 +4538,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "26150",
-      "stop_name": "Darebin Rail Replacement Bus Stop",
-      "station_name": "Darebin Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
-      "parent_station": "vic:rail:DBN",
-      "station_id": "vic:rail:DBN",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:DLG",
       "stop_name": "Darling Railway Station",
       "station_name": "Darling Railway Station",
@@ -4611,16 +4591,6 @@
       "station_name": "Dennis Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:DEN",
-      "station_id": "vic:rail:DEN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26152",
-      "stop_name": "Dennis Rail Replacement Bus Stop",
-      "station_name": "Dennis Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:DEN",
       "station_id": "vic:rail:DEN",
       "station_stop": false
@@ -4781,16 +4751,6 @@
       "station_name": "Eaglemont Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:EAG",
-      "station_id": "vic:rail:EAG",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26155",
-      "stop_name": "Eaglemont Rail Replacement Bus Stop",
-      "station_name": "Eaglemont Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:EAG",
       "station_id": "vic:rail:EAG",
       "station_stop": false
@@ -5088,16 +5048,6 @@
       "station_name": "East Pakenham Railway Station ",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:EPH",
-      "station_id": "vic:rail:EPH",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26158",
-      "stop_name": "East Pakenham Rail Replacement Bus Stop",
-      "station_name": "East Pakenham Railway Station ",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:EPH",
       "station_id": "vic:rail:EPH",
       "station_stop": false
@@ -6054,6 +6004,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26166",
+      "stop_name": "Fawkner Rail Replacement Bus Stop",
+      "station_name": "Fawkner Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:FAK",
+      "station_id": "vic:rail:FAK",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:FTG",
       "stop_name": "Ferntree Gully Railway Station",
       "station_name": "Ferntree Gully Railway Station",
@@ -6311,6 +6271,16 @@
       "station_name": "Flemington Bridge Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:FBD",
+      "station_id": "vic:rail:FBD",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26169",
+      "stop_name": "Flemington Bridge Rail Replacement Bus Stop",
+      "station_name": "Flemington Bridge Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:FBD",
       "station_id": "vic:rail:FBD",
       "station_stop": false
@@ -8291,6 +8261,16 @@
       "station_name": "Gowrie Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:GOW",
+      "station_id": "vic:rail:GOW",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26182",
+      "stop_name": "Gowrie Rail Replacement Bus Stop",
+      "station_name": "Gowrie Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:GOW",
       "station_id": "vic:rail:GOW",
       "station_stop": false
@@ -11498,6 +11478,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26217",
+      "stop_name": "Macaulay Rail Replacement Bus Stop",
+      "station_name": "Macaulay Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:MAC",
+      "station_id": "vic:rail:MAC",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:MCD",
       "stop_name": "Macleod Railway Station",
       "station_name": "Macleod Railway Station",
@@ -12460,6 +12450,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26224",
+      "stop_name": "Merlynston Rail Replacement Bus Stop",
+      "station_name": "Merlynston Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:MYN",
+      "station_id": "vic:rail:MYN",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:MDD",
       "stop_name": "Mernda Railway Station",
       "station_name": "Mernda Railway Station",
@@ -12817,6 +12817,16 @@
       "station_name": "Middle Footscray Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:MFY",
+      "station_id": "vic:rail:MFY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26228",
+      "stop_name": "Middle Footscray Rail Replacement Bus Stop",
+      "station_name": "Middle Footscray Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:MFY",
       "station_id": "vic:rail:MFY",
       "station_stop": false
@@ -13514,6 +13524,16 @@
       "station_name": "Moreland Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:MLD",
+      "station_id": "vic:rail:MLD",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26236",
+      "stop_name": "Moreland Rail Replacement Bus Stop",
+      "station_name": "Moreland Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:MLD",
       "station_id": "vic:rail:MLD",
       "station_stop": false
@@ -14840,16 +14860,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "26247",
-      "stop_name": "North Williamstown Rail Replacement Bus Stop",
-      "station_name": "North Williamstown Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
-      "parent_station": "vic:rail:NWN",
-      "station_id": "vic:rail:NWN",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:NCE",
       "stop_name": "Northcote Railway Station",
       "station_name": "Northcote Railway Station",
@@ -15503,16 +15513,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "26252",
-      "stop_name": "Officer Rail Replacement Bus Stop",
-      "station_name": "Officer Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
-      "parent_station": "vic:rail:OFC",
-      "station_id": "vic:rail:OFC",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:OMD",
       "stop_name": "Ormond Railway Station",
       "station_name": "Ormond Railway Station",
@@ -15685,16 +15685,6 @@
       "station_name": "Pakenham Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:PKM",
-      "station_id": "vic:rail:PKM",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26254",
-      "stop_name": "Pakenham Rail Replacement Bus Stop",
-      "station_name": "Pakenham Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:PKM",
       "station_id": "vic:rail:PKM",
       "station_stop": false
@@ -17676,6 +17666,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26270",
+      "stop_name": "Royal Park Rail Replacement Bus Stop",
+      "station_name": "Royal Park Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:RPK",
+      "station_id": "vic:rail:RPK",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:RUS",
       "stop_name": "Rushall Railway Station",
       "station_name": "Rushall Railway Station",
@@ -18286,16 +18286,6 @@
       "station_name": "South Kensington Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:SKN",
-      "station_id": "vic:rail:SKN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26279",
-      "stop_name": "South Kensington Rail Replacement Bus Stop",
-      "station_name": "South Kensington Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:SKN",
       "station_id": "vic:rail:SKN",
       "station_stop": false
@@ -20829,6 +20819,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26300",
+      "stop_name": "Upfield Rail Replacement Bus Stop",
+      "station_name": "Upfield Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:UFD",
+      "station_id": "vic:rail:UFD",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:UFG",
       "stop_name": "Upper Ferntree Gully Railway Station",
       "station_name": "Upper Ferntree Gully Railway Station",
@@ -22194,16 +22194,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "26311",
-      "stop_name": "Westgarth Rail Replacement Bus Stop",
-      "station_name": "Westgarth Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
-      "parent_station": "vic:rail:WTG",
-      "station_id": "vic:rail:WTG",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:WTO",
       "stop_name": "Westona Railway Station",
       "station_name": "Westona Railway Station",
@@ -22432,16 +22422,6 @@
       "station_name": "Williamstown Beach Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:WBH",
-      "station_id": "vic:rail:WBH",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26314",
-      "stop_name": "Williamstown Beach Rail Replacement Bus Stop",
-      "station_name": "Williamstown Beach Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:WBH",
       "station_id": "vic:rail:WBH",
       "station_stop": false
