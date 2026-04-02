@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T01:01:40Z",
+  "generated_at": "2026-04-02T22:01:41Z",
   "gtfs_path": "/home/runner/work/trmnl-ptv/trmnl-ptv/proxy/data/gtfs/2",
   "stops": [
     {
@@ -191,6 +191,69 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:ALP_ConX",
+      "stop_name": "Connex",
+      "station_name": "Alphington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ALP",
+      "station_id": "vic:rail:ALP",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ALP_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Alphington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ALP",
+      "station_id": "vic:rail:ALP",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ALP_EN1",
+      "stop_name": "Rowe St",
+      "station_name": "Alphington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ALP",
+      "station_id": "vic:rail:ALP",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ALP_EN2",
+      "stop_name": "Rowe St",
+      "station_name": "Alphington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ALP",
+      "station_id": "vic:rail:ALP",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ALP_EN3",
+      "stop_name": "Wingrove St",
+      "station_name": "Alphington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ALP",
+      "station_id": "vic:rail:ALP",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ALP_PR1",
+      "stop_name": "Park & Ride 1",
+      "station_name": "Alphington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ALP",
+      "station_id": "vic:rail:ALP",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ALP_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Alphington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ALP",
+      "station_id": "vic:rail:ALP",
+      "station_stop": false
+    },
+    {
       "stop_id": "13750",
       "stop_name": "Alphington Station",
       "station_name": "Alphington Railway Station",
@@ -206,6 +269,16 @@
       "station_name": "Alphington Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:ALP",
+      "station_id": "vic:rail:ALP",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26103",
+      "stop_name": "Alphington Rail Replacement Bus Stop",
+      "station_name": "Alphington Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:ALP",
       "station_id": "vic:rail:ALP",
       "station_stop": false
@@ -1090,6 +1163,132 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:BAY_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_ConX",
+      "stop_name": "Connex",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_DP3",
+      "stop_name": "Decision point 3",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_DP4",
+      "stop_name": "Decision point 4",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_EN1",
+      "stop_name": "Bike Trail",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_EN2",
+      "stop_name": "Station St",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_EN3",
+      "stop_name": "Station St",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_EN4",
+      "stop_name": "Station St",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_EN5",
+      "stop_name": "Station St",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_LI1",
+      "stop_name": "Lift",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BAY_TX1",
+      "stop_name": "Taxi Zone",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
       "stop_id": "11410",
       "stop_name": "Bayswater Station",
       "station_name": "Bayswater Railway Station",
@@ -1105,6 +1304,16 @@
       "station_name": "Bayswater Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:BAY",
+      "station_id": "vic:rail:BAY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26114",
+      "stop_name": "Bayswater Rail Replacement Bus Stop",
+      "station_name": "Bayswater Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:BAY",
       "station_id": "vic:rail:BAY",
       "station_stop": false
@@ -2049,6 +2258,132 @@
       "station_stop": true
     },
     {
+      "stop_id": "22254",
+      "stop_name": "Broadmeadows Station",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_ConX",
+      "stop_name": "Connex",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_DP3",
+      "stop_name": "Decision point 3",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_DP4",
+      "stop_name": "Decision point 4",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_EN1",
+      "stop_name": "Pascoe Vale Rd",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_EN2",
+      "stop_name": "Pascoe Vale Rd",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_EN3",
+      "stop_name": "Pascoe Vale Rd",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_EN4",
+      "stop_name": "Pascoe Vale Rd",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_EN5",
+      "stop_name": "Railway Cres",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_EN6",
+      "stop_name": "Railway Cres",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BMS_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
       "stop_id": "15529",
       "stop_name": "Broadmeadows Station",
       "station_name": "Broadmeadows Railway Station",
@@ -2064,6 +2399,26 @@
       "station_name": "Broadmeadows Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26500",
+      "stop_name": "Broadmeadows Station",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "3",
+      "platform_label": "Platform 3",
+      "parent_station": "vic:rail:BMS",
+      "station_id": "vic:rail:BMS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26126",
+      "stop_name": "Broadmeadows Rail Replacement Bus Stop",
+      "station_name": "Broadmeadows Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:BMS",
       "station_id": "vic:rail:BMS",
       "station_stop": false
@@ -2546,16 +2901,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "26131",
-      "stop_name": "Canterbury Rail Replacement Bus Stop",
-      "station_name": "Canterbury Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
-      "parent_station": "vic:rail:CBY",
-      "station_id": "vic:rail:CBY",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:CDA",
       "stop_name": "Cardinia Road Railway Station",
       "station_name": "Cardinia Road Railway Station",
@@ -2823,6 +3168,87 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:CAR_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Carrum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CAR",
+      "station_id": "vic:rail:CAR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CAR_ConX",
+      "stop_name": "Connex",
+      "station_name": "Carrum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CAR",
+      "station_id": "vic:rail:CAR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CAR_EN1",
+      "stop_name": "McLeod Rd",
+      "station_name": "Carrum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CAR",
+      "station_id": "vic:rail:CAR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CAR_EN2",
+      "stop_name": "Nepean Hwy",
+      "station_name": "Carrum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CAR",
+      "station_id": "vic:rail:CAR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CAR_KR1",
+      "stop_name": "Kiss & Ride",
+      "station_name": "Carrum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CAR",
+      "station_id": "vic:rail:CAR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CAR_LI1",
+      "stop_name": "McLeod Rd",
+      "station_name": "Carrum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CAR",
+      "station_id": "vic:rail:CAR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CAR_LI2",
+      "stop_name": "Nepean Hwy",
+      "station_name": "Carrum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CAR",
+      "station_id": "vic:rail:CAR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CAR_PR1",
+      "stop_name": "Park & Ride1",
+      "station_name": "Carrum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CAR",
+      "station_id": "vic:rail:CAR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CAR_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Carrum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CAR",
+      "station_id": "vic:rail:CAR",
+      "station_stop": false
+    },
+    {
       "stop_id": "11226",
       "stop_name": "Carrum Station",
       "station_name": "Carrum Railway Station",
@@ -2838,6 +3264,16 @@
       "station_name": "Carrum Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:CAR",
+      "station_id": "vic:rail:CAR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26134",
+      "stop_name": "Carrum Rail Replacement Bus Stop",
+      "station_name": "Carrum Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:CAR",
       "station_id": "vic:rail:CAR",
       "station_stop": false
@@ -3080,16 +3516,6 @@
       "station_name": "Chatham Railway Station",
       "platform_code": "3",
       "platform_label": "Platform 3",
-      "parent_station": "vic:rail:CHM",
-      "station_id": "vic:rail:CHM",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26136",
-      "stop_name": "Chatham Rail Replacement Bus Stop",
-      "station_name": "Chatham Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:CHM",
       "station_id": "vic:rail:CHM",
       "station_stop": false
@@ -4251,6 +4677,132 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:CDN_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_ConX",
+      "stop_name": "Connex",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_DP3",
+      "stop_name": "Decision point 3",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_EN1",
+      "stop_name": "Kent Ave",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_EN2",
+      "stop_name": "Wicklow Ave",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_EN3",
+      "stop_name": "Pierson Dr",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_LI1",
+      "stop_name": "Lift 1",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_LI2",
+      "stop_name": "Lift 2",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_LI3",
+      "stop_name": "Lift 3",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_LI4",
+      "stop_name": "Lift 4",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_PR1",
+      "stop_name": "Park & Ride 1",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CDN_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
       "stop_id": "12168",
       "stop_name": "Croydon Station",
       "station_name": "Croydon Railway Station",
@@ -4266,6 +4818,16 @@
       "station_name": "Croydon Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:CDN",
+      "station_id": "vic:rail:CDN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26148",
+      "stop_name": "Croydon Rail Replacement Bus Stop",
+      "station_name": "Croydon Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:CDN",
       "station_id": "vic:rail:CDN",
       "station_stop": false
@@ -4567,6 +5129,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26151",
+      "stop_name": "Darling Rail Replacement Bus Stop",
+      "station_name": "Darling Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:DLG",
+      "station_id": "vic:rail:DLG",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:DEN",
       "stop_name": "Dennis Railway Station",
       "station_name": "Dennis Railway Station",
@@ -4574,6 +5146,96 @@
       "parent_station": "",
       "station_id": "vic:rail:DEN",
       "station_stop": true
+    },
+    {
+      "stop_id": "vic:rail:DEN_ConX",
+      "stop_name": "Connex",
+      "station_name": "Dennis Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DEN",
+      "station_id": "vic:rail:DEN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DEN_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Dennis Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DEN",
+      "station_id": "vic:rail:DEN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DEN_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Dennis Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DEN",
+      "station_id": "vic:rail:DEN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DEN_EN1",
+      "stop_name": "Cain Ave",
+      "station_name": "Dennis Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DEN",
+      "station_id": "vic:rail:DEN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DEN_EN2",
+      "stop_name": "Cain Ave",
+      "station_name": "Dennis Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DEN",
+      "station_id": "vic:rail:DEN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DEN_EN3",
+      "stop_name": "South Cres",
+      "station_name": "Dennis Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DEN",
+      "station_id": "vic:rail:DEN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DEN_PR1",
+      "stop_name": "Park & Ride 1",
+      "station_name": "Dennis Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DEN",
+      "station_id": "vic:rail:DEN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DEN_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Dennis Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DEN",
+      "station_id": "vic:rail:DEN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DEN_PR3",
+      "stop_name": "Park & Ride 3",
+      "station_name": "Dennis Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DEN",
+      "station_id": "vic:rail:DEN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DEN_PR4",
+      "stop_name": "Park & Ride 4",
+      "station_name": "Dennis Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DEN",
+      "station_id": "vic:rail:DEN",
+      "station_stop": false
     },
     {
       "stop_id": "13746",
@@ -4591,6 +5253,16 @@
       "station_name": "Dennis Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:DEN",
+      "station_id": "vic:rail:DEN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26152",
+      "stop_name": "Dennis Rail Replacement Bus Stop",
+      "station_name": "Dennis Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:DEN",
       "station_id": "vic:rail:DEN",
       "station_stop": false
@@ -6305,6 +6977,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "15525",
+      "stop_name": "Flemington Racecourse Station",
+      "station_name": "Flemington Racecourse Railway Station",
+      "platform_code": "2",
+      "platform_label": "Platform 2",
+      "parent_station": "vic:rail:RCE",
+      "station_id": "vic:rail:RCE",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:FSS",
       "stop_name": "Flinders Street Railway Station",
       "station_name": "Flinders Street Railway Station",
@@ -7860,6 +8542,16 @@
       "station_name": "Glen Iris Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:GIR",
+      "station_id": "vic:rail:GIR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26176",
+      "stop_name": "Glen Iris Rail Replacement Bus Stop",
+      "station_name": "Glen Iris Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:GIR",
       "station_id": "vic:rail:GIR",
       "station_stop": false
@@ -10947,6 +11639,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26210",
+      "stop_name": "Kooyong Rail Replacement Bus Stop",
+      "station_name": "Kooyong Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:KYG",
+      "station_id": "vic:rail:KYG",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:LAB",
       "stop_name": "Laburnum Railway Station",
       "station_name": "Laburnum Railway Station",
@@ -10971,16 +11673,6 @@
       "station_name": "Laburnum Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:LAB",
-      "station_id": "vic:rail:LAB",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26211",
-      "stop_name": "Laburnum Rail Replacement Bus Stop",
-      "station_name": "Laburnum Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:LAB",
       "station_id": "vic:rail:LAB",
       "station_stop": false
@@ -11309,6 +12001,159 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:LIL_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_ConX",
+      "stop_name": "Connex",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_DP3",
+      "stop_name": "Decision point 3",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_EN1",
+      "stop_name": "William St West",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_EN2",
+      "stop_name": "William St West",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_EN3",
+      "stop_name": "William St East",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_EN4",
+      "stop_name": "William St East",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_EN5",
+      "stop_name": "William St East",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_EN6",
+      "stop_name": "Maroondah Hwy",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_KR1",
+      "stop_name": "Kiss & Ride",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_LI1",
+      "stop_name": "Lift 1",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_LI2",
+      "stop_name": "Maroondah Hwy",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_PR1",
+      "stop_name": "Park & Ride 1",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LIL_TX1",
+      "stop_name": "Taxi Zone",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
       "stop_id": "12164",
       "stop_name": "Lilydale Station",
       "station_name": "Lilydale Railway Station",
@@ -11324,6 +12169,16 @@
       "station_name": "Lilydale Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:LIL",
+      "station_id": "vic:rail:LIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26215",
+      "stop_name": "Lilydale Rail Replacement Bus Stop",
+      "station_name": "Lilydale Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:LIL",
       "station_id": "vic:rail:LIL",
       "station_stop": false
@@ -11456,6 +12311,33 @@
       "parent_station": "",
       "station_id": "vic:rail:MAC",
       "station_stop": true
+    },
+    {
+      "stop_id": "vic:rail:MAC_ConX",
+      "stop_name": "Connex",
+      "station_name": "Macaulay Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MAC",
+      "station_id": "vic:rail:MAC",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MAC_EN1",
+      "stop_name": "Macaulay Rd",
+      "station_name": "Macaulay Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MAC",
+      "station_id": "vic:rail:MAC",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MAC_EN2",
+      "stop_name": "Macaulay Rd",
+      "station_name": "Macaulay Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MAC",
+      "station_id": "vic:rail:MAC",
+      "station_stop": false
     },
     {
       "stop_id": "14322",
@@ -13451,6 +14333,78 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:MLK_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Mooroolbark Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MLK",
+      "station_id": "vic:rail:MLK",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MLK_ConX",
+      "stop_name": "Connex",
+      "station_name": "Mooroolbark Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MLK",
+      "station_id": "vic:rail:MLK",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MLK_DP1",
+      "stop_name": "Decision point",
+      "station_name": "Mooroolbark Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MLK",
+      "station_id": "vic:rail:MLK",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MLK_EN1",
+      "stop_name": "Brice Ave",
+      "station_name": "Mooroolbark Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MLK",
+      "station_id": "vic:rail:MLK",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MLK_KR1",
+      "stop_name": "Kiss & Ride 1",
+      "station_name": "Mooroolbark Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MLK",
+      "station_id": "vic:rail:MLK",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MLK_KR2",
+      "stop_name": "Kiss & Ride 2",
+      "station_name": "Mooroolbark Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MLK",
+      "station_id": "vic:rail:MLK",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MLK_LI1",
+      "stop_name": "Lift",
+      "station_name": "Mooroolbark Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MLK",
+      "station_id": "vic:rail:MLK",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MLK_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Mooroolbark Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MLK",
+      "station_id": "vic:rail:MLK",
+      "station_stop": false
+    },
+    {
       "stop_id": "12166",
       "stop_name": "Mooroolbark Station",
       "station_name": "Mooroolbark Railway Station",
@@ -13466,6 +14420,16 @@
       "station_name": "Mooroolbark Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:MLK",
+      "station_id": "vic:rail:MLK",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26234",
+      "stop_name": "Mooroolbark Rail Replacement Bus Stop",
+      "station_name": "Mooroolbark Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:MLK",
       "station_id": "vic:rail:MLK",
       "station_stop": false
@@ -18271,6 +19235,42 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:SKN_ConX",
+      "stop_name": "Connex",
+      "station_name": "South Kensington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SKN",
+      "station_id": "vic:rail:SKN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SKN_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "South Kensington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SKN",
+      "station_id": "vic:rail:SKN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SKN_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "South Kensington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SKN",
+      "station_id": "vic:rail:SKN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SKN_EN1",
+      "stop_name": "Childers St",
+      "station_name": "South Kensington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SKN",
+      "station_id": "vic:rail:SKN",
+      "station_stop": false
+    },
+    {
       "stop_id": "15522",
       "stop_name": "South Kensington Station",
       "station_name": "South Kensington Railway Station",
@@ -18286,6 +19286,16 @@
       "station_name": "South Kensington Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:SKN",
+      "station_id": "vic:rail:SKN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26279",
+      "stop_name": "South Kensington Rail Replacement Bus Stop",
+      "station_name": "South Kensington Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:SKN",
       "station_id": "vic:rail:SKN",
       "station_stop": false
@@ -19286,6 +20296,96 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:SME_ConX",
+      "stop_name": "Connex",
+      "station_name": "Strathmore Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SME",
+      "station_id": "vic:rail:SME",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SME_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Strathmore Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SME",
+      "station_id": "vic:rail:SME",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SME_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Strathmore Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SME",
+      "station_id": "vic:rail:SME",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SME_DP3",
+      "stop_name": "Decision point 3",
+      "station_name": "Strathmore Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SME",
+      "station_id": "vic:rail:SME",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SME_EN1",
+      "stop_name": "Pascoe Vale Rd",
+      "station_name": "Strathmore Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SME",
+      "station_id": "vic:rail:SME",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SME_EN2",
+      "stop_name": "Pascoe Vale Rd",
+      "station_name": "Strathmore Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SME",
+      "station_id": "vic:rail:SME",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SME_EN3",
+      "stop_name": "Pascoe Ave",
+      "station_name": "Strathmore Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SME",
+      "station_id": "vic:rail:SME",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SME_EN4",
+      "stop_name": "Amelia Ave",
+      "station_name": "Strathmore Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SME",
+      "station_id": "vic:rail:SME",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SME_EN5",
+      "stop_name": "Amelia Ave",
+      "station_name": "Strathmore Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SME",
+      "station_id": "vic:rail:SME",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SME_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Strathmore Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SME",
+      "station_id": "vic:rail:SME",
+      "station_stop": false
+    },
+    {
       "stop_id": "15539",
       "stop_name": "Strathmore Station",
       "station_name": "Strathmore Railway Station",
@@ -19301,6 +20401,16 @@
       "station_name": "Strathmore Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:SME",
+      "station_id": "vic:rail:SME",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26288",
+      "stop_name": "Strathmore Rail Replacement Bus Stop",
+      "station_name": "Strathmore Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:SME",
       "station_id": "vic:rail:SME",
       "station_stop": false
