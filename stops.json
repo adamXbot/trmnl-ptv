@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T21:27:12Z",
+  "generated_at": "2026-04-10T17:01:43Z",
   "gtfs_path": "/home/runner/work/trmnl-ptv/trmnl-ptv/proxy/data/gtfs/2",
   "stops": [
     {
@@ -1125,16 +1125,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "26112",
-      "stop_name": "Batman Rail Replacement Bus Stop",
-      "station_name": "Batman Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
-      "parent_station": "vic:rail:BAT",
-      "station_id": "vic:rail:BAT",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:BXR",
       "stop_name": "Baxter Railway Station",
       "station_name": "Baxter Railway Station",
@@ -2229,6 +2219,115 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:BBH_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BBH_ConX",
+      "stop_name": "Connex",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BBH_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BBH_EN1",
+      "stop_name": "South Rd",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BBH_EN2",
+      "stop_name": "Station Walk",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BBH_EN3",
+      "stop_name": "Station Walk",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BBH_EN4",
+      "stop_name": "Station Walk",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BBH_EN5",
+      "stop_name": "Station Walk",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BBH_EN6",
+      "stop_name": "Canterbury Pl",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BBH_PR1",
+      "stop_name": "Park & Ride 1",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BBH_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "14274",
+      "stop_name": "Brighton Beach Station",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "1",
+      "platform_label": "Platform 1",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
       "stop_id": "14275",
       "stop_name": "Brighton Beach Station",
       "station_name": "Brighton Beach Railway Station",
@@ -2244,6 +2343,16 @@
       "station_name": "Brighton Beach Railway Station",
       "platform_code": "3",
       "platform_label": "Platform 3",
+      "parent_station": "vic:rail:BBH",
+      "station_id": "vic:rail:BBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26125",
+      "stop_name": "Brighton Beach Rail Replacement Bus Stop",
+      "station_name": "Brighton Beach Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:BBH",
       "station_id": "vic:rail:BBH",
       "station_stop": false
@@ -4296,6 +4405,123 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:CLO_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_ConX",
+      "stop_name": "Connex",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_DP3",
+      "stop_name": "Decision point 3",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_EN1",
+      "stop_name": "Longford Cres",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_EN2",
+      "stop_name": "Longford Cres",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_EN3",
+      "stop_name": "Pascoe Vale Rd",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_KR1",
+      "stop_name": "Kiss & Ride",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_LI1",
+      "stop_name": "Longford Cres",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_LI2",
+      "stop_name": "Lift 2",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_LI3",
+      "stop_name": "Pascoe Vale Rd",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CLO_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
       "stop_id": "26503",
       "stop_name": "Coolaroo Station",
       "station_name": "Coolaroo Railway Station",
@@ -4311,6 +4537,16 @@
       "station_name": "Coolaroo Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:CLO",
+      "station_id": "vic:rail:CLO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26143",
+      "stop_name": "Coolaroo Rail Replacement Bus Stop",
+      "station_name": "Coolaroo Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:CLO",
       "station_id": "vic:rail:CLO",
       "station_stop": false
@@ -6676,16 +6912,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "26166",
-      "stop_name": "Fawkner Rail Replacement Bus Stop",
-      "station_name": "Fawkner Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
-      "parent_station": "vic:rail:FAK",
-      "station_id": "vic:rail:FAK",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:FTG",
       "stop_name": "Ferntree Gully Railway Station",
       "station_name": "Ferntree Gully Railway Station",
@@ -6943,16 +7169,6 @@
       "station_name": "Flemington Bridge Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:FBD",
-      "station_id": "vic:rail:FBD",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26169",
-      "stop_name": "Flemington Bridge Rail Replacement Bus Stop",
-      "station_name": "Flemington Bridge Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:FBD",
       "station_id": "vic:rail:FBD",
       "station_stop": false
@@ -8953,16 +9169,6 @@
       "station_name": "Gowrie Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:GOW",
-      "station_id": "vic:rail:GOW",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26182",
-      "stop_name": "Gowrie Rail Replacement Bus Stop",
-      "station_name": "Gowrie Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:GOW",
       "station_id": "vic:rail:GOW",
       "station_stop": false
@@ -11658,6 +11864,60 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:LAB_ConX",
+      "stop_name": "Connex",
+      "station_name": "Laburnum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LAB",
+      "station_id": "vic:rail:LAB",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LAB_EN1",
+      "stop_name": "Laburnum St",
+      "station_name": "Laburnum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LAB",
+      "station_id": "vic:rail:LAB",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LAB_EN2",
+      "stop_name": "Laburnum St",
+      "station_name": "Laburnum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LAB",
+      "station_id": "vic:rail:LAB",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LAB_EN3",
+      "stop_name": "Laburnum St",
+      "station_name": "Laburnum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LAB",
+      "station_id": "vic:rail:LAB",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LAB_EN4",
+      "stop_name": "Thiele Ct",
+      "station_name": "Laburnum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LAB",
+      "station_id": "vic:rail:LAB",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:LAB_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Laburnum Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:LAB",
+      "station_id": "vic:rail:LAB",
+      "station_stop": false
+    },
+    {
       "stop_id": "12225",
       "stop_name": "Laburnum Station",
       "station_name": "Laburnum Railway Station",
@@ -11673,6 +11933,16 @@
       "station_name": "Laburnum Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:LAB",
+      "station_id": "vic:rail:LAB",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26211",
+      "stop_name": "Laburnum Rail Replacement Bus Stop",
+      "station_name": "Laburnum Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:LAB",
       "station_id": "vic:rail:LAB",
       "station_stop": false
@@ -13312,6 +13582,78 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:MYN_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Merlynston Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MYN",
+      "station_id": "vic:rail:MYN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MYN_ConX",
+      "stop_name": "Connex",
+      "station_name": "Merlynston Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MYN",
+      "station_id": "vic:rail:MYN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MYN_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Merlynston Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MYN",
+      "station_id": "vic:rail:MYN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MYN_EN1",
+      "stop_name": "Bain/Plaisted",
+      "station_name": "Merlynston Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MYN",
+      "station_id": "vic:rail:MYN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MYN_EN2",
+      "stop_name": "Orvieto St",
+      "station_name": "Merlynston Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MYN",
+      "station_id": "vic:rail:MYN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MYN_PR1",
+      "stop_name": "Park & Ride 1",
+      "station_name": "Merlynston Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MYN",
+      "station_id": "vic:rail:MYN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MYN_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Merlynston Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MYN",
+      "station_id": "vic:rail:MYN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MYN_PR3",
+      "stop_name": "Park & Ride 3",
+      "station_name": "Merlynston Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MYN",
+      "station_id": "vic:rail:MYN",
+      "station_stop": false
+    },
+    {
       "stop_id": "14304",
       "stop_name": "Merlynston Station",
       "station_name": "Merlynston Railway Station",
@@ -14488,16 +14830,6 @@
       "station_name": "Moreland Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:MLD",
-      "station_id": "vic:rail:MLD",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26236",
-      "stop_name": "Moreland Rail Replacement Bus Stop",
-      "station_name": "Moreland Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:MLD",
       "station_id": "vic:rail:MLD",
       "station_stop": false
@@ -15819,6 +16151,16 @@
       "station_name": "North Williamstown Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:NWN",
+      "station_id": "vic:rail:NWN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26247",
+      "stop_name": "North Williamstown Rail Replacement Bus Stop",
+      "station_name": "North Williamstown Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:NWN",
       "station_id": "vic:rail:NWN",
       "station_stop": false
@@ -18610,6 +18952,33 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:RPK_ConX",
+      "stop_name": "Connex",
+      "station_name": "Royal Park Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RPK",
+      "station_id": "vic:rail:RPK",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RPK_EN1",
+      "stop_name": "Poplar Rd",
+      "station_name": "Royal Park Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RPK",
+      "station_id": "vic:rail:RPK",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RPK_EN2",
+      "stop_name": "Poplar Rd",
+      "station_name": "Royal Park Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RPK",
+      "station_id": "vic:rail:RPK",
+      "station_stop": false
+    },
+    {
       "stop_id": "14318",
       "stop_name": "Royal Park Station",
       "station_name": "Royal Park Railway Station",
@@ -19207,6 +19576,25 @@
       "station_stop": false
     },
     {
+      "stop_id": "vic:rail:SGS",
+      "stop_name": "Showgrounds Railway Station",
+      "station_name": "Showgrounds Railway Station",
+      "platform_code": "",
+      "parent_station": "",
+      "station_id": "vic:rail:SGS",
+      "station_stop": true
+    },
+    {
+      "stop_id": "15526",
+      "stop_name": "Showgrounds Station",
+      "station_name": "Showgrounds Railway Station",
+      "platform_code": "1",
+      "platform_label": "Platform 1",
+      "parent_station": "vic:rail:SGS",
+      "station_id": "vic:rail:SGS",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:SVE",
       "stop_name": "Somerville Railway Station",
       "station_name": "Somerville Railway Station",
@@ -19600,16 +19988,6 @@
       "station_name": "Southern Cross Railway Station",
       "platform_code": "9",
       "platform_label": "Platform 9",
-      "parent_station": "vic:rail:SSS",
-      "station_id": "vic:rail:SSS",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26282",
-      "stop_name": "Southern Cross Rail Replacement Bus Stop",
-      "station_name": "Southern Cross Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:SSS",
       "station_id": "vic:rail:SSS",
       "station_stop": false
@@ -21929,16 +22307,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "26300",
-      "stop_name": "Upfield Rail Replacement Bus Stop",
-      "station_name": "Upfield Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
-      "parent_station": "vic:rail:UFD",
-      "station_id": "vic:rail:UFD",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:UFG",
       "stop_name": "Upper Ferntree Gully Railway Station",
       "station_name": "Upper Ferntree Gully Railway Station",
@@ -23532,6 +23900,16 @@
       "station_name": "Williamstown Beach Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:WBH",
+      "station_id": "vic:rail:WBH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26314",
+      "stop_name": "Williamstown Beach Rail Replacement Bus Stop",
+      "station_name": "Williamstown Beach Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:WBH",
       "station_id": "vic:rail:WBH",
       "station_stop": false
