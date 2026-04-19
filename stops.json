@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T06:16:27Z",
+  "generated_at": "2026-04-19T20:31:19Z",
   "gtfs_path": "/home/runner/work/trmnl-ptv/trmnl-ptv/proxy/data/gtfs/2",
   "stops": [
     {
@@ -811,6 +811,16 @@
       "station_name": "Ashburton Railway Station",
       "platform_code": "1",
       "platform_label": "Platform 1",
+      "parent_station": "vic:rail:ASH",
+      "station_id": "vic:rail:ASH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26108",
+      "stop_name": "Ashburton Rail Replacement Bus Stop",
+      "station_name": "Ashburton Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:ASH",
       "station_id": "vic:rail:ASH",
       "station_stop": false
@@ -3010,6 +3020,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26131",
+      "stop_name": "Canterbury Rail Replacement Bus Stop",
+      "station_name": "Canterbury Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:CBY",
+      "station_id": "vic:rail:CBY",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:CDA",
       "stop_name": "Cardinia Road Railway Station",
       "station_name": "Cardinia Road Railway Station",
@@ -3625,6 +3645,16 @@
       "station_name": "Chatham Railway Station",
       "platform_code": "3",
       "platform_label": "Platform 3",
+      "parent_station": "vic:rail:CHM",
+      "station_id": "vic:rail:CHM",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26136",
+      "stop_name": "Chatham Rail Replacement Bus Stop",
+      "station_name": "Chatham Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:CHM",
       "station_id": "vic:rail:CHM",
       "station_stop": false
@@ -7154,6 +7184,33 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:FBD_ConX",
+      "stop_name": "Connex",
+      "station_name": "Flemington Bridge Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:FBD",
+      "station_id": "vic:rail:FBD",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:FBD_EN1",
+      "stop_name": "Flemington Rd",
+      "station_name": "Flemington Bridge Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:FBD",
+      "station_id": "vic:rail:FBD",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:FBD_EN2",
+      "stop_name": "Flemington Rd",
+      "station_name": "Flemington Bridge Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:FBD",
+      "station_id": "vic:rail:FBD",
+      "station_stop": false
+    },
+    {
       "stop_id": "14320",
       "stop_name": "Flemington Bridge Station",
       "station_name": "Flemington Bridge Railway Station",
@@ -7174,6 +7231,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26169",
+      "stop_name": "Flemington Bridge Rail Replacement Bus Stop",
+      "station_name": "Flemington Bridge Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:FBD",
+      "station_id": "vic:rail:FBD",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:RCE",
       "stop_name": "Flemington Racecourse Railway Station",
       "station_name": "Flemington Racecourse Railway Station",
@@ -7188,16 +7255,6 @@
       "station_name": "Flemington Racecourse Railway Station",
       "platform_code": "1",
       "platform_label": "Platform 1",
-      "parent_station": "vic:rail:RCE",
-      "station_id": "vic:rail:RCE",
-      "station_stop": false
-    },
-    {
-      "stop_id": "15525",
-      "stop_name": "Flemington Racecourse Station",
-      "station_name": "Flemington Racecourse Railway Station",
-      "platform_code": "2",
-      "platform_label": "Platform 2",
       "parent_station": "vic:rail:RCE",
       "station_id": "vic:rail:RCE",
       "station_stop": false
@@ -8743,6 +8800,51 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:GIR_ConX",
+      "stop_name": "Connex",
+      "station_name": "Glen Iris Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GIR",
+      "station_id": "vic:rail:GIR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:GIR_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Glen Iris Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GIR",
+      "station_id": "vic:rail:GIR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:GIR_EN1",
+      "stop_name": "High St",
+      "station_name": "Glen Iris Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GIR",
+      "station_id": "vic:rail:GIR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:GIR_EN2",
+      "stop_name": "Willis St",
+      "station_name": "Glen Iris Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GIR",
+      "station_id": "vic:rail:GIR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:GIR_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Glen Iris Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GIR",
+      "station_id": "vic:rail:GIR",
+      "station_stop": false
+    },
+    {
       "stop_id": "5966",
       "stop_name": "Glen Iris Station",
       "station_name": "Glen Iris Railway Station",
@@ -8866,6 +8968,78 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:GBV_ConX",
+      "stop_name": "Connex",
+      "station_name": "Glenbervie Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GBV",
+      "station_id": "vic:rail:GBV",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:GBV_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Glenbervie Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GBV",
+      "station_id": "vic:rail:GBV",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:GBV_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Glenbervie Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GBV",
+      "station_id": "vic:rail:GBV",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:GBV_EN1",
+      "stop_name": "Napier Ct",
+      "station_name": "Glenbervie Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GBV",
+      "station_id": "vic:rail:GBV",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:GBV_EN2",
+      "stop_name": "Napier Ct",
+      "station_name": "Glenbervie Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GBV",
+      "station_id": "vic:rail:GBV",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:GBV_EN3",
+      "stop_name": "Glass St",
+      "station_name": "Glenbervie Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GBV",
+      "station_id": "vic:rail:GBV",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:GBV_PR1",
+      "stop_name": "Park & Ride 1",
+      "station_name": "Glenbervie Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GBV",
+      "station_id": "vic:rail:GBV",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:GBV_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Glenbervie Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:GBV",
+      "station_id": "vic:rail:GBV",
+      "station_stop": false
+    },
+    {
       "stop_id": "15541",
       "stop_name": "Glenbervie Station",
       "station_name": "Glenbervie Railway Station",
@@ -8881,6 +9055,16 @@
       "station_name": "Glenbervie Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:GBV",
+      "station_id": "vic:rail:GBV",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26178",
+      "stop_name": "Glenbervie Rail Replacement Bus Stop",
+      "station_name": "Glenbervie Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:GBV",
       "station_id": "vic:rail:GBV",
       "station_stop": false
@@ -9567,6 +9751,16 @@
       "station_name": "Hartwell Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:HWL",
+      "station_id": "vic:rail:HWL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26186",
+      "stop_name": "Hartwell Rail Replacement Bus Stop",
+      "station_name": "Hartwell Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:HWL",
       "station_id": "vic:rail:HWL",
       "station_stop": false
@@ -11197,6 +11391,16 @@
       "station_name": "Jacana Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:JAC",
+      "station_id": "vic:rail:JAC",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26202",
+      "stop_name": "Jacana Rail Replacement Bus Stop",
+      "station_name": "Jacana Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:JAC",
       "station_id": "vic:rail:JAC",
       "station_stop": false
@@ -17378,6 +17582,42 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:PAT_ConX",
+      "stop_name": "Connex",
+      "station_name": "Patterson Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:PAT",
+      "station_id": "vic:rail:PAT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:PAT_EN1",
+      "stop_name": "Patterson Rd",
+      "station_name": "Patterson Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:PAT",
+      "station_id": "vic:rail:PAT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:PAT_EN2",
+      "stop_name": "Patterson Rd",
+      "station_name": "Patterson Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:PAT",
+      "station_id": "vic:rail:PAT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:PAT_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Patterson Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:PAT",
+      "station_id": "vic:rail:PAT",
+      "station_stop": false
+    },
+    {
       "stop_id": "14236",
       "stop_name": "Patterson Station",
       "station_name": "Patterson Railway Station",
@@ -17403,6 +17643,16 @@
       "station_name": "Patterson Railway Station",
       "platform_code": "3",
       "platform_label": "Platform 3",
+      "parent_station": "vic:rail:PAT",
+      "station_id": "vic:rail:PAT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26258",
+      "stop_name": "Patterson Rail Replacement Bus Stop",
+      "station_name": "Patterson Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:PAT",
       "station_id": "vic:rail:PAT",
       "station_stop": false
@@ -18214,6 +18464,141 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:RWE_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_ConX",
+      "stop_name": "Connex",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_EN1",
+      "stop_name": "Railway Ave",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_EN2",
+      "stop_name": "Patterson St",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_EN3",
+      "stop_name": "Railway Ave",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_EN4",
+      "stop_name": "Patterson St",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_KR1",
+      "stop_name": "Kiss & Ride",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_LI1",
+      "stop_name": "Lift 1",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_LI2",
+      "stop_name": "Lift 2",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_LI3",
+      "stop_name": "Lift 3",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_LI4",
+      "stop_name": "Lift 4",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_PR1",
+      "stop_name": "Park & Ride 1",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RWE_PR3",
+      "stop_name": "Park & Ride 3",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
       "stop_id": "12170",
       "stop_name": "Ringwood East Station",
       "station_name": "Ringwood East Railway Station",
@@ -18229,6 +18614,16 @@
       "station_name": "Ringwood East Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:RWE",
+      "station_id": "vic:rail:RWE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26264",
+      "stop_name": "Ringwood East Rail Replacement Bus Stop",
+      "station_name": "Ringwood East Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:RWE",
       "station_id": "vic:rail:RWE",
       "station_stop": false
@@ -22297,11 +22692,66 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:UFD_ConX",
+      "stop_name": "Connex",
+      "station_name": "Upfield Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFD",
+      "station_id": "vic:rail:UFD",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:UFD_EN1",
+      "stop_name": "Barry Rd",
+      "station_name": "Upfield Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFD",
+      "station_id": "vic:rail:UFD",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:UFD_EN2",
+      "stop_name": "Barry Rd",
+      "station_name": "Upfield Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFD",
+      "station_id": "vic:rail:UFD",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:UFD_PR1",
+      "stop_name": "Park & Ride 1",
+      "station_name": "Upfield Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFD",
+      "station_id": "vic:rail:UFD",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:UFD_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Upfield Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFD",
+      "station_id": "vic:rail:UFD",
+      "station_stop": false
+    },
+    {
       "stop_id": "14299",
       "stop_name": "Upfield Station",
       "station_name": "Upfield Railway Station",
       "platform_code": "1",
       "platform_label": "Platform 1",
+      "parent_station": "vic:rail:UFD",
+      "station_id": "vic:rail:UFD",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26300",
+      "stop_name": "Upfield Rail Replacement Bus Stop",
+      "station_name": "Upfield Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:UFD",
       "station_id": "vic:rail:UFD",
       "station_stop": false
