@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T12:45:56Z",
+  "generated_at": "2026-04-24T21:31:32Z",
   "gtfs_path": "/home/runner/work/trmnl-ptv/trmnl-ptv/proxy/data/gtfs/2",
   "stops": [
     {
@@ -10,6 +10,87 @@
       "parent_station": "",
       "station_id": "vic:rail:ACF",
       "station_stop": true
+    },
+    {
+      "stop_id": "vic:rail:ACF_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Aircraft Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ACF",
+      "station_id": "vic:rail:ACF",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ACF_ConX",
+      "stop_name": "Connex",
+      "station_name": "Aircraft Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ACF",
+      "station_id": "vic:rail:ACF",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ACF_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Aircraft Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ACF",
+      "station_id": "vic:rail:ACF",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ACF_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Aircraft Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ACF",
+      "station_id": "vic:rail:ACF",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ACF_DP3",
+      "stop_name": "Decision point 3",
+      "station_name": "Aircraft Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ACF",
+      "station_id": "vic:rail:ACF",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ACF_EN1",
+      "stop_name": "Sir Richard Williams",
+      "station_name": "Aircraft Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ACF",
+      "station_id": "vic:rail:ACF",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ACF_EN2",
+      "stop_name": "Sir Richard Williams",
+      "station_name": "Aircraft Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ACF",
+      "station_id": "vic:rail:ACF",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ACF_EN3",
+      "stop_name": "Triholm Ave",
+      "station_name": "Aircraft Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ACF",
+      "station_id": "vic:rail:ACF",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:ACF_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Aircraft Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:ACF",
+      "station_id": "vic:rail:ACF",
+      "station_stop": false
     },
     {
       "stop_id": "13738",
@@ -1154,6 +1235,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26113",
+      "stop_name": "Baxter Rail Replacement Bus Stop",
+      "station_name": "Baxter Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:BXR",
+      "station_id": "vic:rail:BXR",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:BAY",
       "stop_name": "Bayswater Railway Station",
       "station_name": "Bayswater Railway Station",
@@ -1653,6 +1744,16 @@
       "station_name": "Bittern Railway Station",
       "platform_code": "1",
       "platform_label": "Platform 1",
+      "parent_station": "vic:rail:BIT",
+      "station_id": "vic:rail:BIT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26120",
+      "stop_name": "Bittern Rail Replacement Bus Stop",
+      "station_name": "Bittern Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:BIT",
       "station_id": "vic:rail:BIT",
       "station_stop": false
@@ -2988,6 +3089,96 @@
       "parent_station": "",
       "station_id": "vic:rail:CBY",
       "station_stop": true
+    },
+    {
+      "stop_id": "vic:rail:CBY_ConX",
+      "stop_name": "Connex",
+      "station_name": "Canterbury Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CBY",
+      "station_id": "vic:rail:CBY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CBY_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Canterbury Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CBY",
+      "station_id": "vic:rail:CBY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CBY_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Canterbury Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CBY",
+      "station_id": "vic:rail:CBY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CBY_DP3",
+      "stop_name": "Decision point 3",
+      "station_name": "Canterbury Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CBY",
+      "station_id": "vic:rail:CBY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CBY_EN1",
+      "stop_name": "Mailing Rd",
+      "station_name": "Canterbury Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CBY",
+      "station_id": "vic:rail:CBY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CBY_EN2",
+      "stop_name": "Canterbury Rd",
+      "station_name": "Canterbury Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CBY",
+      "station_id": "vic:rail:CBY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CBY_EN3",
+      "stop_name": "Canterbury Rd",
+      "station_name": "Canterbury Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CBY",
+      "station_id": "vic:rail:CBY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CBY_EN4",
+      "stop_name": "Railway Pl",
+      "station_name": "Canterbury Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CBY",
+      "station_id": "vic:rail:CBY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CBY_EN5",
+      "stop_name": "Railway Pl",
+      "station_name": "Canterbury Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CBY",
+      "station_id": "vic:rail:CBY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CBY_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Canterbury Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CBY",
+      "station_id": "vic:rail:CBY",
+      "station_stop": false
     },
     {
       "stop_id": "12210",
@@ -4832,6 +5023,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26146",
+      "stop_name": "Crib Point Rail Replacement Bus Stop",
+      "station_name": "Crib Point Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:CPT",
+      "station_id": "vic:rail:CPT",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:CXT",
       "stop_name": "Croxton Railway Station",
       "station_name": "Croxton Railway Station",
@@ -5373,6 +5574,78 @@
       "parent_station": "",
       "station_id": "vic:rail:DLG",
       "station_stop": true
+    },
+    {
+      "stop_id": "vic:rail:DLG_ConX",
+      "stop_name": "Connex",
+      "station_name": "Darling Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DLG",
+      "station_id": "vic:rail:DLG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DLG_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Darling Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DLG",
+      "station_id": "vic:rail:DLG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DLG_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Darling Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DLG",
+      "station_id": "vic:rail:DLG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DLG_EN1",
+      "stop_name": "Clynden Ave",
+      "station_name": "Darling Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DLG",
+      "station_id": "vic:rail:DLG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DLG_EN2",
+      "stop_name": "Clynden Ave",
+      "station_name": "Darling Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DLG",
+      "station_id": "vic:rail:DLG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DLG_EN3",
+      "stop_name": "Moira St",
+      "station_name": "Darling Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DLG",
+      "station_id": "vic:rail:DLG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DLG_PR1",
+      "stop_name": "Park & Ride 1",
+      "station_name": "Darling Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DLG",
+      "station_id": "vic:rail:DLG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DLG_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Darling Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DLG",
+      "station_id": "vic:rail:DLG",
+      "station_stop": false
     },
     {
       "stop_id": "8272",
@@ -9785,6 +10058,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26187",
+      "stop_name": "Hastings Rail Replacement Bus Stop",
+      "station_name": "Hastings Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:HST",
+      "station_id": "vic:rail:HST",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:HKN",
       "stop_name": "Hawksburn Railway Station",
       "station_name": "Hawksburn Railway Station",
@@ -11714,6 +11997,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26206",
+      "stop_name": "Kananook Rail Replacement Bus Stop",
+      "station_name": "Kananook Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:KAN",
+      "station_id": "vic:rail:KAN",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:KPL",
       "stop_name": "Keilor Plains Railway Station",
       "station_name": "Keilor Plains Railway Station",
@@ -12044,16 +12337,6 @@
       "station_name": "Kooyong Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
-      "parent_station": "vic:rail:KYG",
-      "station_id": "vic:rail:KYG",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26210",
-      "stop_name": "Kooyong Rail Replacement Bus Stop",
-      "station_name": "Kooyong Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:KYG",
       "station_id": "vic:rail:KYG",
       "station_stop": false
@@ -12461,6 +12744,16 @@
       "station_name": "Leawarra Railway Station",
       "platform_code": "1",
       "platform_label": "Platform 1",
+      "parent_station": "vic:rail:LWA",
+      "station_id": "vic:rail:LWA",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26214",
+      "stop_name": "Leawarra Rail Replacement Bus Stop",
+      "station_name": "Leawarra Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:LWA",
       "station_id": "vic:rail:LWA",
       "station_stop": false
@@ -15010,6 +15303,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26235",
+      "stop_name": "Mordialloc Rail Replacement Bus Stop",
+      "station_name": "Mordialloc Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:MOR",
+      "station_id": "vic:rail:MOR",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:MLD",
       "stop_name": "Moreland Railway Station",
       "station_name": "Moreland Railway Station",
@@ -15053,6 +15356,16 @@
       "station_name": "Morradoo Railway Station",
       "platform_code": "1",
       "platform_label": "Platform 1",
+      "parent_station": "vic:rail:MRO",
+      "station_id": "vic:rail:MRO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26237",
+      "stop_name": "Morradoo Rail Replacement Bus Stop",
+      "station_name": "Morradoo Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:MRO",
       "station_id": "vic:rail:MRO",
       "station_stop": false
@@ -17224,6 +17537,16 @@
       "station_name": "Parkdale Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:PKD",
+      "station_id": "vic:rail:PKD",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26255",
+      "stop_name": "Parkdale Rail Replacement Bus Stop",
+      "station_name": "Parkdale Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:PKD",
       "station_id": "vic:rail:PKD",
       "station_stop": false
@@ -19822,6 +20145,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26275",
+      "stop_name": "Seaford Rail Replacement Bus Stop",
+      "station_name": "Seaford Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:SEA",
+      "station_id": "vic:rail:SEA",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:SHE",
       "stop_name": "Seaholme Railway Station",
       "station_name": "Seaholme Railway Station",
@@ -20004,6 +20337,16 @@
       "station_name": "Somerville Railway Station",
       "platform_code": "1",
       "platform_label": "Platform 1",
+      "parent_station": "vic:rail:SVE",
+      "station_id": "vic:rail:SVE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26278",
+      "stop_name": "Somerville Rail Replacement Bus Stop",
+      "station_name": "Somerville Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:SVE",
       "station_id": "vic:rail:SVE",
       "station_stop": false
@@ -20328,6 +20671,403 @@
       "station_stop": true
     },
     {
+      "stop_id": "20043",
+      "stop_name": "Southern Cross Station",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_LI1",
+      "stop_name": "Spencer St Lift 1",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_LI2",
+      "stop_name": "Bourke St Lift 2",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_LI3",
+      "stop_name": "Docklands Lift",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_LI4",
+      "stop_name": "Docklands Lift",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_LI5",
+      "stop_name": "Docklands Lift",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_LI6",
+      "stop_name": "Collins St Lift",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_LI7",
+      "stop_name": "Collins St Lift",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_LI8",
+      "stop_name": "Collins St Lift",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_TX1",
+      "stop_name": "Taxi Zone 1",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_TX2",
+      "stop_name": "Taxi Zone 2",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_bDP1",
+      "stop_name": "Bourke St DP",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_bEN1",
+      "stop_name": "Bourke St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_bEN2",
+      "stop_name": "Bourke St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_bEN3",
+      "stop_name": "Bourke St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_cCN1",
+      "stop_name": "C St Concourse",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_cCN2",
+      "stop_name": "C St Concourse",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_cDP1",
+      "stop_name": "Collins St DP",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_cDP2",
+      "stop_name": "Collins St DP",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_cDP3",
+      "stop_name": "Collins St DP",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_cDP4",
+      "stop_name": "Collins St DP",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_cEN1",
+      "stop_name": "Collins St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_cEN2",
+      "stop_name": "Collins St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_dDP1",
+      "stop_name": "Docklands DP",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_dDP2",
+      "stop_name": "Docklands DP",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_dDP3",
+      "stop_name": "Docklands DP",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_dDP4",
+      "stop_name": "Docklands DP",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_dDP5",
+      "stop_name": "Docklands DP",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_dEN1",
+      "stop_name": "Docklands Stadium",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sCN1",
+      "stop_name": "S St Concourse",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sCN2",
+      "stop_name": "S St Concourse",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sCN3",
+      "stop_name": "S St Concourse",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sCN4",
+      "stop_name": "S St Concourse",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sCN5",
+      "stop_name": "S St Concourse",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sCN6",
+      "stop_name": "S St Concourse",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sEN1",
+      "stop_name": "Spencer St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sEN2",
+      "stop_name": "Spencer St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sEN3",
+      "stop_name": "Spencer St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sEN4",
+      "stop_name": "Spencer St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sEN5",
+      "stop_name": "Spencer St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sEN6",
+      "stop_name": "Spencer St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SSS_sEN7",
+      "stop_name": "Spencer St",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26524",
+      "stop_name": "Southern Cross Station",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "1",
+      "platform_label": "Platform 1",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
       "stop_id": "22189",
       "stop_name": "Southern Cross Station",
       "station_name": "Southern Cross Railway Station",
@@ -20378,11 +21118,111 @@
       "station_stop": false
     },
     {
+      "stop_id": "26525",
+      "stop_name": "Southern Cross Station",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "15",
+      "platform_label": "Platform 15",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26526",
+      "stop_name": "Southern Cross Station",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "16",
+      "platform_label": "Platform 16",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "22181",
+      "stop_name": "Southern Cross Station",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "2",
+      "platform_label": "Platform 2",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "22182",
+      "stop_name": "Southern Cross Station",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "3",
+      "platform_label": "Platform 3",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "22183",
+      "stop_name": "Southern Cross Station",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "4",
+      "platform_label": "Platform 4",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "22184",
+      "stop_name": "Southern Cross Station",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "5",
+      "platform_label": "Platform 5",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "22185",
+      "stop_name": "Southern Cross Station",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "6",
+      "platform_label": "Platform 6",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "22186",
+      "stop_name": "Southern Cross Station",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "7",
+      "platform_label": "Platform 7",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "22187",
+      "stop_name": "Southern Cross Station",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "8",
+      "platform_label": "Platform 8",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
       "stop_id": "22188",
       "stop_name": "Southern Cross Station",
       "station_name": "Southern Cross Railway Station",
       "platform_code": "9",
       "platform_label": "Platform 9",
+      "parent_station": "vic:rail:SSS",
+      "station_id": "vic:rail:SSS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26282",
+      "stop_name": "Southern Cross Rail Replacement Bus Stop",
+      "station_name": "Southern Cross Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:SSS",
       "station_id": "vic:rail:SSS",
       "station_stop": false
@@ -21055,6 +21895,16 @@
       "station_name": "Stony Point Railway Station",
       "platform_code": "1",
       "platform_label": "Platform 1",
+      "parent_station": "vic:rail:STY",
+      "station_id": "vic:rail:STY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26287",
+      "stop_name": "Stony Point Rail Replacement Bus Stop",
+      "station_name": "Stony Point Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:STY",
       "station_id": "vic:rail:STY",
       "station_stop": false
@@ -22467,6 +23317,16 @@
       "station_name": "Tyabb Railway Station",
       "platform_code": "1",
       "platform_label": "Platform 1",
+      "parent_station": "vic:rail:TAB",
+      "station_id": "vic:rail:TAB",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26299",
+      "stop_name": "Tyabb Rail Replacement Bus Stop",
+      "station_name": "Tyabb Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:TAB",
       "station_id": "vic:rail:TAB",
       "station_stop": false
@@ -24129,6 +24989,33 @@
       "parent_station": "",
       "station_id": "vic:rail:WTO",
       "station_stop": true
+    },
+    {
+      "stop_id": "vic:rail:WTO_ConX",
+      "stop_name": "Connex",
+      "station_name": "Westona Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:WTO",
+      "station_id": "vic:rail:WTO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:WTO_EN1",
+      "stop_name": "Maidstone St",
+      "station_name": "Westona Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:WTO",
+      "station_id": "vic:rail:WTO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:WTO_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Westona Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:WTO",
+      "station_id": "vic:rail:WTO",
+      "station_stop": false
     },
     {
       "stop_id": "13740",
