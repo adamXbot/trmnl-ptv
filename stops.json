@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T08:01:04Z",
+  "generated_at": "2026-05-22T23:46:09Z",
   "gtfs_path": "/home/runner/work/trmnl-ptv/trmnl-ptv/proxy/data/gtfs/2",
   "stops": [
     {
@@ -1469,6 +1469,24 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:BXR_ConX",
+      "stop_name": "Connex",
+      "station_name": "Baxter Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BXR",
+      "station_id": "vic:rail:BXR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BXR_EN1",
+      "stop_name": "Baxter-Tooradin Rd",
+      "station_name": "Baxter Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BXR",
+      "station_id": "vic:rail:BXR",
+      "station_stop": false
+    },
+    {
       "stop_id": "5701",
       "stop_name": "Baxter Station",
       "station_name": "Baxter Railway Station",
@@ -2181,6 +2199,33 @@
       "parent_station": "",
       "station_id": "vic:rail:BIT",
       "station_stop": true
+    },
+    {
+      "stop_id": "vic:rail:BIT_ConX",
+      "stop_name": "Connex",
+      "station_name": "Bittern Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BIT",
+      "station_id": "vic:rail:BIT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BIT_EN1",
+      "stop_name": "Frankston-Flinders",
+      "station_name": "Bittern Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BIT",
+      "station_id": "vic:rail:BIT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BIT_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Bittern Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BIT",
+      "station_id": "vic:rail:BIT",
+      "station_stop": false
     },
     {
       "stop_id": "3236",
@@ -5457,6 +5502,24 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:CPT_ConX",
+      "stop_name": "Connex",
+      "station_name": "Crib Point Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CPT",
+      "station_id": "vic:rail:CPT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CPT_EN1",
+      "stop_name": "Stony Point Rd",
+      "station_name": "Crib Point Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CPT",
+      "station_id": "vic:rail:CPT",
+      "station_stop": false
+    },
+    {
       "stop_id": "615",
       "stop_name": "Crib Point Station",
       "station_name": "Crib Point Railway Station",
@@ -6428,6 +6491,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26154",
+      "stop_name": "Diggers Rest Rail Replacement Bus Stop",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:EAG",
       "stop_name": "Eaglemont Railway Station",
       "station_name": "Eaglemont Railway Station",
@@ -6795,6 +6868,16 @@
       "station_name": "East Pakenham Railway Station ",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:EPH",
+      "station_id": "vic:rail:EPH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26158",
+      "stop_name": "East Pakenham Rail Replacement Bus Stop",
+      "station_name": "East Pakenham Railway Station ",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:EPH",
       "station_id": "vic:rail:EPH",
       "station_stop": false
@@ -8102,25 +8185,6 @@
       "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:FBD",
       "station_id": "vic:rail:FBD",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:RCE",
-      "stop_name": "Flemington Racecourse Railway Station",
-      "station_name": "Flemington Racecourse Railway Station",
-      "platform_code": "",
-      "parent_station": "",
-      "station_id": "vic:rail:RCE",
-      "station_stop": true
-    },
-    {
-      "stop_id": "15524",
-      "stop_name": "Flemington Racecourse Station",
-      "station_name": "Flemington Racecourse Railway Station",
-      "platform_code": "1",
-      "platform_label": "Platform 1",
-      "parent_station": "vic:rail:RCE",
-      "station_id": "vic:rail:RCE",
       "station_stop": false
     },
     {
@@ -10637,6 +10701,42 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:HWL_ConX",
+      "stop_name": "Connex",
+      "station_name": "Hartwell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:HWL",
+      "station_id": "vic:rail:HWL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:HWL_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Hartwell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:HWL",
+      "station_id": "vic:rail:HWL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:HWL_EN1",
+      "stop_name": "Georgina Pde",
+      "station_name": "Hartwell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:HWL",
+      "station_id": "vic:rail:HWL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:HWL_EN2",
+      "stop_name": "Fordham Ave",
+      "station_name": "Hartwell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:HWL",
+      "station_id": "vic:rail:HWL",
+      "station_stop": false
+    },
+    {
       "stop_id": "11202",
       "stop_name": "Hartwell Station",
       "station_name": "Hartwell Railway Station",
@@ -10657,6 +10757,16 @@
       "station_stop": false
     },
     {
+      "stop_id": "26186",
+      "stop_name": "Hartwell Rail Replacement Bus Stop",
+      "station_name": "Hartwell Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:HWL",
+      "station_id": "vic:rail:HWL",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:HST",
       "stop_name": "Hastings Railway Station",
       "station_name": "Hastings Railway Station",
@@ -10671,16 +10781,6 @@
       "station_name": "Hastings Railway Station",
       "platform_code": "1",
       "platform_label": "Platform 1",
-      "parent_station": "vic:rail:HST",
-      "station_id": "vic:rail:HST",
-      "station_stop": false
-    },
-    {
-      "stop_id": "26187",
-      "stop_name": "Hastings Rail Replacement Bus Stop",
-      "station_name": "Hastings Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:HST",
       "station_id": "vic:rail:HST",
       "station_stop": false
@@ -16175,16 +16275,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "26235",
-      "stop_name": "Mordialloc Rail Replacement Bus Stop",
-      "station_name": "Mordialloc Railway Station",
-      "platform_code": "Replacement bus",
-      "platform_label": "Platform Replacement bus",
-      "parent_station": "vic:rail:MOR",
-      "station_id": "vic:rail:MOR",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:MLD",
       "stop_name": "Moreland Railway Station",
       "station_name": "Moreland Railway Station",
@@ -16366,6 +16456,33 @@
       "parent_station": "",
       "station_id": "vic:rail:MRO",
       "station_stop": true
+    },
+    {
+      "stop_id": "vic:rail:MRO_ConX",
+      "stop_name": "Connex",
+      "station_name": "Morradoo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MRO",
+      "station_id": "vic:rail:MRO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MRO_EN1",
+      "stop_name": "Disney St",
+      "station_name": "Morradoo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MRO",
+      "station_id": "vic:rail:MRO",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MRO_EN2",
+      "stop_name": "Disney St",
+      "station_name": "Morradoo Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MRO",
+      "station_id": "vic:rail:MRO",
+      "station_stop": false
     },
     {
       "stop_id": "2155",
@@ -21917,6 +22034,33 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:SVE_ConX",
+      "stop_name": "Connex",
+      "station_name": "Somerville Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SVE",
+      "station_id": "vic:rail:SVE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SVE_EN1",
+      "stop_name": "Frankston-Flinders",
+      "station_name": "Somerville Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SVE",
+      "station_id": "vic:rail:SVE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SVE_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Somerville Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SVE",
+      "station_id": "vic:rail:SVE",
+      "station_stop": false
+    },
+    {
       "stop_id": "5082",
       "stop_name": "Somerville Station",
       "station_name": "Somerville Railway Station",
@@ -23475,6 +23619,33 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:STY_ConX",
+      "stop_name": "Connex",
+      "station_name": "Stony Point Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:STY",
+      "station_id": "vic:rail:STY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:STY_EN1",
+      "stop_name": "Stony Point Rd",
+      "station_name": "Stony Point Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:STY",
+      "station_id": "vic:rail:STY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:STY_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Stony Point Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:STY",
+      "station_id": "vic:rail:STY",
+      "station_stop": false
+    },
+    {
       "stop_id": "88",
       "stop_name": "Stony Point Station",
       "station_name": "Stony Point Railway Station",
@@ -24934,6 +25105,24 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:TAB_ConX",
+      "stop_name": "Connex",
+      "station_name": "Tyabb Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:TAB",
+      "station_id": "vic:rail:TAB",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:TAB_EN1",
+      "stop_name": "Mornington-Tyabb Rd",
+      "station_name": "Tyabb Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:TAB",
+      "station_id": "vic:rail:TAB",
+      "station_stop": false
+    },
+    {
       "stop_id": "4318",
       "stop_name": "Tyabb Station",
       "station_name": "Tyabb Railway Station",
@@ -25248,6 +25437,69 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:UFG_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Upper Ferntree Gully Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFG",
+      "station_id": "vic:rail:UFG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:UFG_ConX",
+      "stop_name": "Connex",
+      "station_name": "Upper Ferntree Gully Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFG",
+      "station_id": "vic:rail:UFG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:UFG_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Upper Ferntree Gully Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFG",
+      "station_id": "vic:rail:UFG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:UFG_EN1",
+      "stop_name": "Burwood Hwy",
+      "station_name": "Upper Ferntree Gully Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFG",
+      "station_id": "vic:rail:UFG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:UFG_EN2",
+      "stop_name": "Railway Ave",
+      "station_name": "Upper Ferntree Gully Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFG",
+      "station_id": "vic:rail:UFG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:UFG_PR1",
+      "stop_name": "Park & Ride 1",
+      "station_name": "Upper Ferntree Gully Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFG",
+      "station_id": "vic:rail:UFG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:UFG_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Upper Ferntree Gully Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:UFG",
+      "station_id": "vic:rail:UFG",
+      "station_stop": false
+    },
+    {
       "stop_id": "11245",
       "stop_name": "Upper Ferntree Gully Station",
       "station_name": "Upper Ferntree Gully Railway Station",
@@ -25263,6 +25515,16 @@
       "station_name": "Upper Ferntree Gully Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:UFG",
+      "station_id": "vic:rail:UFG",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26301",
+      "stop_name": "Upper Ferntree Gully Rail Replacement Bus Stop",
+      "station_name": "Upper Ferntree Gully Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:UFG",
       "station_id": "vic:rail:UFG",
       "station_stop": false
@@ -27074,8 +27336,8 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:WIL_PR",
-      "stop_name": "Park & Ride",
+      "stop_id": "vic:rail:WIL_ConX",
+      "stop_name": "Connex",
       "station_name": "Williamstown Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:WIL",
@@ -27083,8 +27345,17 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:WIL_Railw",
-      "stop_name": "Railway/Morris",
+      "stop_id": "vic:rail:WIL_EN1",
+      "stop_name": "Ann St",
+      "station_name": "Williamstown Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:WIL",
+      "station_id": "vic:rail:WIL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:WIL_PR1",
+      "stop_name": "Park & Ride",
       "station_name": "Williamstown Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:WIL",
