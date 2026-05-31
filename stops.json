@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-29T09:46:11Z",
+  "generated_at": "2026-05-31T21:41:21Z",
   "gtfs_path": "/home/runner/work/trmnl-ptv/trmnl-ptv/proxy/data/gtfs/2",
   "stops": [
     {
@@ -1885,6 +1885,24 @@
       "station_stop": false
     },
     {
+      "stop_id": "vic:rail:BEL_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "Bell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BEL",
+      "station_id": "vic:rail:BEL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BEL_DP2",
+      "stop_name": "Decision point 2",
+      "station_name": "Bell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BEL",
+      "station_id": "vic:rail:BEL",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:BEL_EN1",
       "stop_name": "Bell St",
       "station_name": "Bell Railway Station",
@@ -1903,8 +1921,62 @@
       "station_stop": false
     },
     {
+      "stop_id": "vic:rail:BEL_KR1",
+      "stop_name": "Kiss & Ride",
+      "station_name": "Bell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BEL",
+      "station_id": "vic:rail:BEL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BEL_LI1",
+      "stop_name": "Lift 1",
+      "station_name": "Bell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BEL",
+      "station_id": "vic:rail:BEL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BEL_LI2",
+      "stop_name": "Lift 2",
+      "station_name": "Bell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BEL",
+      "station_id": "vic:rail:BEL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BEL_LI3",
+      "stop_name": "Lift 3",
+      "station_name": "Bell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BEL",
+      "station_id": "vic:rail:BEL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BEL_LI4",
+      "stop_name": "Lift 4",
+      "station_name": "Bell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BEL",
+      "station_id": "vic:rail:BEL",
+      "station_stop": false
+    },
+    {
       "stop_id": "vic:rail:BEL_PR1",
       "stop_name": "Park & Ride",
+      "station_name": "Bell Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:BEL",
+      "station_id": "vic:rail:BEL",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:BEL_TX1",
+      "stop_name": "Taxi Zone",
       "station_name": "Bell Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:BEL",
@@ -4310,6 +4382,42 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:CHM_ConX",
+      "stop_name": "Connex",
+      "station_name": "Chatham Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CHM",
+      "station_id": "vic:rail:CHM",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CHM_DP1",
+      "stop_name": "Decision point",
+      "station_name": "Chatham Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CHM",
+      "station_id": "vic:rail:CHM",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CHM_EN1",
+      "stop_name": "Stanley Terrace",
+      "station_name": "Chatham Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CHM",
+      "station_id": "vic:rail:CHM",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:CHM_EN2",
+      "stop_name": "Junction Rd",
+      "station_name": "Chatham Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:CHM",
+      "station_id": "vic:rail:CHM",
+      "station_stop": false
+    },
+    {
       "stop_id": "12212",
       "stop_name": "Chatham Station",
       "station_name": "Chatham Railway Station",
@@ -4335,6 +4443,16 @@
       "station_name": "Chatham Railway Station",
       "platform_code": "3",
       "platform_label": "Platform 3",
+      "parent_station": "vic:rail:CHM",
+      "station_id": "vic:rail:CHM",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26136",
+      "stop_name": "Chatham Rail Replacement Bus Stop",
+      "station_name": "Chatham Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:CHM",
       "station_id": "vic:rail:CHM",
       "station_stop": false
@@ -6471,6 +6589,114 @@
       "station_stop": true
     },
     {
+      "stop_id": "19999",
+      "stop_name": "Diggers Rest Station",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DRT_BR1",
+      "stop_name": "Bike & Ride",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DRT_ConX",
+      "stop_name": "Connex",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DRT_EN1",
+      "stop_name": "Old Calder Hwy",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DRT_EN2",
+      "stop_name": "Old Calder Hwy",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DRT_EN3",
+      "stop_name": "Platform 2",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DRT_EN4",
+      "stop_name": "Platform 2",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DRT_EN5",
+      "stop_name": "Golden Way",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DRT_KR1",
+      "stop_name": "Kiss & Ride",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DRT_KR2",
+      "stop_name": "Kiss & Ride 2",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DRT_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:DRT_PR2",
+      "stop_name": "Park & Ride 2",
+      "station_name": "Diggers Rest Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:DRT",
+      "station_id": "vic:rail:DRT",
+      "station_stop": false
+    },
+    {
       "stop_id": "26505",
       "stop_name": "Diggers Rest Station",
       "station_name": "Diggers Rest Railway Station",
@@ -8185,6 +8411,72 @@
       "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:FBD",
       "station_id": "vic:rail:FBD",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RCE",
+      "stop_name": "Flemington Racecourse Railway Station",
+      "station_name": "Flemington Racecourse Railway Station",
+      "platform_code": "",
+      "parent_station": "",
+      "station_id": "vic:rail:RCE",
+      "station_stop": true
+    },
+    {
+      "stop_id": "vic:rail:RCE_ConX",
+      "stop_name": "Connex",
+      "station_name": "Flemington Racecourse Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RCE",
+      "station_id": "vic:rail:RCE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RCE_EN1",
+      "stop_name": "Leonard Cres",
+      "station_name": "Flemington Racecourse Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RCE",
+      "station_id": "vic:rail:RCE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:RCE_EN2",
+      "stop_name": "Leonard Cres",
+      "station_name": "Flemington Racecourse Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:RCE",
+      "station_id": "vic:rail:RCE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "15524",
+      "stop_name": "Flemington Racecourse Station",
+      "station_name": "Flemington Racecourse Railway Station",
+      "platform_code": "1",
+      "platform_label": "Platform 1",
+      "parent_station": "vic:rail:RCE",
+      "station_id": "vic:rail:RCE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "15525",
+      "stop_name": "Flemington Racecourse Station",
+      "station_name": "Flemington Racecourse Railway Station",
+      "platform_code": "2",
+      "platform_label": "Platform 2",
+      "parent_station": "vic:rail:RCE",
+      "station_id": "vic:rail:RCE",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26322",
+      "stop_name": "Flemington Racecourse Rail Replacement Bus Stop",
+      "station_name": "Flemington Racecourse Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:RCE",
+      "station_id": "vic:rail:RCE",
       "station_stop": false
     },
     {
@@ -11556,6 +11848,15 @@
     {
       "stop_id": "vic:rail:HEY_DP2",
       "stop_name": "Decision point 2",
+      "station_name": "Heyington Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:HEY",
+      "station_id": "vic:rail:HEY",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:HEY_DP3",
+      "stop_name": "Decision point 3",
       "station_name": "Heyington Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:HEY",
