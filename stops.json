@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T14:16:07Z",
+  "generated_at": "2026-06-05T17:31:15Z",
   "gtfs_path": "/home/runner/work/trmnl-ptv/trmnl-ptv/proxy/data/gtfs/2",
   "stops": [
     {
@@ -7077,6 +7077,87 @@
       "parent_station": "",
       "station_id": "vic:rail:EPH",
       "station_stop": true
+    },
+    {
+      "stop_id": "49848",
+      "stop_name": "East Pakenham Station",
+      "station_name": "East Pakenham Railway Station ",
+      "platform_code": "",
+      "parent_station": "vic:rail:EPH",
+      "station_id": "vic:rail:EPH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:EPH_CN1",
+      "stop_name": "Concourse",
+      "station_name": "East Pakenham Railway Station ",
+      "platform_code": "",
+      "parent_station": "vic:rail:EPH",
+      "station_id": "vic:rail:EPH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:EPH_ConX",
+      "stop_name": "Connex",
+      "station_name": "East Pakenham Railway Station ",
+      "platform_code": "",
+      "parent_station": "vic:rail:EPH",
+      "station_id": "vic:rail:EPH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:EPH_DP1",
+      "stop_name": "Decision point 1",
+      "station_name": "East Pakenham Railway Station ",
+      "platform_code": "",
+      "parent_station": "vic:rail:EPH",
+      "station_id": "vic:rail:EPH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:EPH_EN1",
+      "stop_name": "Pinehill Dr",
+      "station_name": "East Pakenham Railway Station ",
+      "platform_code": "",
+      "parent_station": "vic:rail:EPH",
+      "station_id": "vic:rail:EPH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:EPH_EN2",
+      "stop_name": "Sharnet Cct",
+      "station_name": "East Pakenham Railway Station ",
+      "platform_code": "",
+      "parent_station": "vic:rail:EPH",
+      "station_id": "vic:rail:EPH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:EPH_KR1",
+      "stop_name": "Kiss & Ride",
+      "station_name": "East Pakenham Railway Station ",
+      "platform_code": "",
+      "parent_station": "vic:rail:EPH",
+      "station_id": "vic:rail:EPH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:EPH_LI1",
+      "stop_name": "Lift",
+      "station_name": "East Pakenham Railway Station ",
+      "platform_code": "",
+      "parent_station": "vic:rail:EPH",
+      "station_id": "vic:rail:EPH",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:EPH_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "East Pakenham Railway Station ",
+      "platform_code": "",
+      "parent_station": "vic:rail:EPH",
+      "station_id": "vic:rail:EPH",
+      "station_stop": false
     },
     {
       "stop_id": "26506",
@@ -16571,6 +16652,16 @@
       "station_name": "Mordialloc Railway Station",
       "platform_code": "2",
       "platform_label": "Platform 2",
+      "parent_station": "vic:rail:MOR",
+      "station_id": "vic:rail:MOR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26235",
+      "stop_name": "Mordialloc Rail Replacement Bus Stop",
+      "station_name": "Mordialloc Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:MOR",
       "station_id": "vic:rail:MOR",
       "station_stop": false
