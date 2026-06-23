@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T21:36:25Z",
+  "generated_at": "2026-06-23T22:56:17Z",
   "gtfs_path": "/home/runner/work/trmnl-ptv/trmnl-ptv/proxy/data/gtfs/2",
   "stops": [
     {
@@ -2154,7 +2154,7 @@
     },
     {
       "stop_id": "27882",
-      "stop_name": "Berwick",
+      "stop_name": "1",
       "station_name": "Berwick Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:BEW",
@@ -2163,7 +2163,7 @@
     },
     {
       "stop_id": "27883",
-      "stop_name": "Berwick",
+      "stop_name": "2",
       "station_name": "Berwick Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:BEW",
@@ -16637,6 +16637,69 @@
       "station_stop": true
     },
     {
+      "stop_id": "vic:rail:MOR_ConX",
+      "stop_name": "Connex",
+      "station_name": "Mordialloc Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MOR",
+      "station_id": "vic:rail:MOR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MOR_EN1",
+      "stop_name": "Mcdonald St",
+      "station_name": "Mordialloc Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MOR",
+      "station_id": "vic:rail:MOR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MOR_EN2",
+      "stop_name": "Albert St",
+      "station_name": "Mordialloc Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MOR",
+      "station_id": "vic:rail:MOR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MOR_KR1",
+      "stop_name": "Kiss & Ride",
+      "station_name": "Mordialloc Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MOR",
+      "station_id": "vic:rail:MOR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MOR_LI1",
+      "stop_name": "Lift 1",
+      "station_name": "Mordialloc Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MOR",
+      "station_id": "vic:rail:MOR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MOR_LI2",
+      "stop_name": "Lift 2",
+      "station_name": "Mordialloc Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MOR",
+      "station_id": "vic:rail:MOR",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:MOR_PR1",
+      "stop_name": "Park & Ride",
+      "station_name": "Mordialloc Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:MOR",
+      "station_id": "vic:rail:MOR",
+      "station_stop": false
+    },
+    {
       "stop_id": "11236",
       "stop_name": "Mordialloc Station",
       "station_name": "Mordialloc Railway Station",
@@ -22414,6 +22477,71 @@
       "platform_label": "Platform Replacement bus",
       "parent_station": "vic:rail:SEN",
       "station_id": "vic:rail:SEN",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SGS",
+      "stop_name": "Showgrounds Railway Station",
+      "station_name": "Showgrounds Railway Station",
+      "platform_code": "",
+      "parent_station": "",
+      "station_id": "vic:rail:SGS",
+      "station_stop": true
+    },
+    {
+      "stop_id": "vic:rail:SGS_ConX",
+      "stop_name": "Connex",
+      "station_name": "Showgrounds Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SGS",
+      "station_id": "vic:rail:SGS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SGS_EN1",
+      "stop_name": "Showgrounds",
+      "station_name": "Showgrounds Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SGS",
+      "station_id": "vic:rail:SGS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SGS_EN2",
+      "stop_name": "Showgrounds",
+      "station_name": "Showgrounds Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SGS",
+      "station_id": "vic:rail:SGS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "vic:rail:SGS_EN3",
+      "stop_name": "Showgrounds",
+      "station_name": "Showgrounds Railway Station",
+      "platform_code": "",
+      "parent_station": "vic:rail:SGS",
+      "station_id": "vic:rail:SGS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "15526",
+      "stop_name": "Showgrounds Station",
+      "station_name": "Showgrounds Railway Station",
+      "platform_code": "1",
+      "platform_label": "Platform 1",
+      "parent_station": "vic:rail:SGS",
+      "station_id": "vic:rail:SGS",
+      "station_stop": false
+    },
+    {
+      "stop_id": "26320",
+      "stop_name": "Showgrounds Railway Station Rail Replacement Bus Stop",
+      "station_name": "Showgrounds Railway Station",
+      "platform_code": "Replacement bus",
+      "platform_label": "Platform Replacement bus",
+      "parent_station": "vic:rail:SGS",
+      "station_id": "vic:rail:SGS",
       "station_stop": false
     },
     {
