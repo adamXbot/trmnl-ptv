@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T01:16:20Z",
+  "generated_at": "2026-07-11T11:31:43Z",
   "gtfs_path": "/home/runner/work/trmnl-ptv/trmnl-ptv/proxy/data/gtfs/2",
   "stops": [
     {
@@ -121,15 +121,6 @@
       "parent_station": "",
       "station_id": "vic:rail:ALM",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:ALM_ConX",
-      "stop_name": "Connex",
-      "station_name": "Alamein Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:ALM",
-      "station_id": "vic:rail:ALM",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:ALM_EN1",
@@ -977,15 +968,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:ASH_ConX",
-      "stop_name": "Connex",
-      "station_name": "Ashburton Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:ASH",
-      "station_id": "vic:rail:ASH",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:ASH_EN1",
       "stop_name": "Welfare Pde",
       "station_name": "Ashburton Railway Station",
@@ -1133,15 +1115,6 @@
       "parent_station": "",
       "station_id": "vic:rail:AUB",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:AUB_ConX",
-      "stop_name": "Connex",
-      "station_name": "Auburn Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:AUB",
-      "station_id": "vic:rail:AUB",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:AUB_DP1",
@@ -1426,15 +1399,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:BAY_ConX",
-      "stop_name": "Connex",
-      "station_name": "Bayswater Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:BAY",
-      "station_id": "vic:rail:BAY",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:BAY_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Bayswater Railway Station",
@@ -1659,15 +1623,6 @@
     {
       "stop_id": "vic:rail:BEG_BR1",
       "stop_name": "Bike & Ride",
-      "station_name": "Belgrave Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:BEG",
-      "station_id": "vic:rail:BEG",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:BEG_ConX",
-      "stop_name": "Connex",
       "station_name": "Belgrave Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:BEG",
@@ -2203,15 +2158,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:BBN_ConX",
-      "stop_name": "Connex",
-      "station_name": "Blackburn Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:BBN",
-      "station_id": "vic:rail:BBN",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:BBN_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Blackburn Railway Station",
@@ -2611,15 +2557,6 @@
     {
       "stop_id": "vic:rail:BOX_CN1",
       "stop_name": "Concourse",
-      "station_name": "Box Hill Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:BOX",
-      "station_id": "vic:rail:BOX",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:BOX_ConX",
-      "stop_name": "Connex",
       "station_name": "Box Hill Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:BOX",
@@ -3128,15 +3065,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:BLY_ConX",
-      "stop_name": "Connex",
-      "station_name": "Burnley Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:BLY",
-      "station_id": "vic:rail:BLY",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:BLY_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Burnley Railway Station",
@@ -3268,15 +3196,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:BWD_ConX",
-      "stop_name": "Connex",
-      "station_name": "Burwood Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:BWD",
-      "station_id": "vic:rail:BWD",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:BWD_EN1",
       "stop_name": "Bardolph St",
       "station_name": "Burwood Railway Station",
@@ -3350,15 +3269,6 @@
       "parent_station": "",
       "station_id": "vic:rail:CAM",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:CAM_ConX",
-      "stop_name": "Connex",
-      "station_name": "Camberwell Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:CAM",
-      "station_id": "vic:rail:CAM",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:CAM_DP1",
@@ -3489,15 +3399,6 @@
       "parent_station": "",
       "station_id": "vic:rail:CBY",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:CBY_ConX",
-      "stop_name": "Connex",
-      "station_name": "Canterbury Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:CBY",
-      "station_id": "vic:rail:CBY",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:CBY_DP1",
@@ -4173,15 +4074,6 @@
       "parent_station": "",
       "station_id": "vic:rail:CHM",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:CHM_ConX",
-      "stop_name": "Connex",
-      "station_name": "Chatham Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:CHM",
-      "station_id": "vic:rail:CHM",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:CHM_DP1",
@@ -5499,15 +5391,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:CDN_ConX",
-      "stop_name": "Connex",
-      "station_name": "Croydon Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:CDN",
-      "station_id": "vic:rail:CDN",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:CDN_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Croydon Railway Station",
@@ -5948,15 +5831,6 @@
       "parent_station": "",
       "station_id": "vic:rail:DLG",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:DLG_ConX",
-      "stop_name": "Connex",
-      "station_name": "Darling Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:DLG",
-      "station_id": "vic:rail:DLG",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:DLG_DP1",
@@ -6478,15 +6352,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:ECM_ConX",
-      "stop_name": "Connex",
-      "station_name": "East Camberwell Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:ECM",
-      "station_id": "vic:rail:ECM",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:ECM_DP1",
       "stop_name": "Decision Point 1",
       "station_name": "East Camberwell Railway Station",
@@ -6610,15 +6475,6 @@
     {
       "stop_id": "vic:rail:EMV_BR1",
       "stop_name": "Bike & Ride",
-      "station_name": "East Malvern Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:EMV",
-      "station_id": "vic:rail:EMV",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:EMV_ConX",
-      "stop_name": "Connex",
       "station_name": "East Malvern Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:EMV",
@@ -6855,15 +6711,6 @@
       "parent_station": "",
       "station_id": "vic:rail:ERM",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:ERM_ConX",
-      "stop_name": "Connex",
-      "station_name": "East Richmond Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:ERM",
-      "station_id": "vic:rail:ERM",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:ERM_EN1",
@@ -7818,15 +7665,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:FTG_ConX",
-      "stop_name": "Connex",
-      "station_name": "Ferntree Gully Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:FTG",
-      "station_id": "vic:rail:FTG",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:FTG_EN1",
       "stop_name": "Station St",
       "station_name": "Ferntree Gully Railway Station",
@@ -7913,15 +7751,6 @@
     {
       "stop_id": "vic:rail:FGS_CN1",
       "stop_name": "Concourse",
-      "station_name": "Flagstaff Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:FGS",
-      "station_id": "vic:rail:FGS",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:FGS_ConX",
-      "stop_name": "Connex",
       "station_name": "Flagstaff Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:FGS",
@@ -8099,15 +7928,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:RCE_ConX",
-      "stop_name": "Connex",
-      "station_name": "Flemington Racecourse Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:RCE",
-      "station_id": "vic:rail:RCE",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:RCE_EN1",
       "stop_name": "Leonard Cres",
       "station_name": "Flemington Racecourse Railway Station",
@@ -8176,15 +7996,6 @@
     {
       "stop_id": "vic:rail:FSS_CN1",
       "stop_name": "Outer Concourse",
-      "station_name": "Flinders Street Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:FSS",
-      "station_id": "vic:rail:FSS",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:FSS_ConX",
-      "stop_name": "Connex",
       "station_name": "Flinders Street Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:FSS",
@@ -9290,15 +9101,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:GAR_ConX",
-      "stop_name": "Connex",
-      "station_name": "Gardiner Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:GAR",
-      "station_id": "vic:rail:GAR",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:GAR_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Gardiner Railway Station",
@@ -9651,15 +9453,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:GIR_ConX",
-      "stop_name": "Connex",
-      "station_name": "Glen Iris Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:GIR",
-      "station_id": "vic:rail:GIR",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:GIR_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Glen Iris Railway Station",
@@ -9910,15 +9703,6 @@
       "parent_station": "",
       "station_id": "vic:rail:GFE",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:GFE_ConX",
-      "stop_name": "Connex",
-      "station_name": "Glenferrie Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:GFE",
-      "station_id": "vic:rail:GFE",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:GFE_DP1",
@@ -10561,15 +10345,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:HWL_ConX",
-      "stop_name": "Connex",
-      "station_name": "Hartwell Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:HWL",
-      "station_id": "vic:rail:HWL",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:HWL_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Hartwell Railway Station",
@@ -10898,15 +10673,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:HAW_ConX",
-      "stop_name": "Connex",
-      "station_name": "Hawthorn Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:HAW",
-      "station_id": "vic:rail:HAW",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:HAW_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Hawthorn Railway Station",
@@ -11030,15 +10796,6 @@
     {
       "stop_id": "vic:rail:HTD_BR1",
       "stop_name": "Bike & Ride",
-      "station_name": "Heatherdale Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:HTD",
-      "station_id": "vic:rail:HTD",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:HTD_ConX",
-      "stop_name": "Connex",
       "station_name": "Heatherdale Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:HTD",
@@ -11191,15 +10948,6 @@
       "parent_station": "",
       "station_id": "vic:rail:HMT",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:HMT_ConX",
-      "stop_name": "Connex",
-      "station_name": "Heathmont Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:HMT",
-      "station_id": "vic:rail:HMT",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:HMT_EN1",
@@ -11397,15 +11145,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:HEY_ConX",
-      "stop_name": "Connex",
-      "station_name": "Heyington Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:HEY",
-      "station_id": "vic:rail:HEY",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:HEY_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Heyington Railway Station",
@@ -11567,15 +11306,6 @@
     {
       "stop_id": "vic:rail:HOL_BR1",
       "stop_name": "Bike & Ride",
-      "station_name": "Holmesglen Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:HOL",
-      "station_id": "vic:rail:HOL",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:HOL_ConX",
-      "stop_name": "Connex",
       "station_name": "Holmesglen Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:HOL",
@@ -12518,15 +12248,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:JOR_ConX",
-      "stop_name": "Connex",
-      "station_name": "Jordanville Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:JOR",
-      "station_id": "vic:rail:JOR",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:JOR_DP1",
       "stop_name": "Decision point",
       "station_name": "Jordanville Railway Station",
@@ -13001,15 +12722,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:KYG_ConX",
-      "stop_name": "Connex",
-      "station_name": "Kooyong Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:KYG",
-      "station_id": "vic:rail:KYG",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:KYG_EN1",
       "stop_name": "Monaro Rd",
       "station_name": "Kooyong Railway Station",
@@ -13074,15 +12786,6 @@
       "parent_station": "",
       "station_id": "vic:rail:LAB",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:LAB_ConX",
-      "stop_name": "Connex",
-      "station_name": "Laburnum Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:LAB",
-      "station_id": "vic:rail:LAB",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:LAB_EN1",
@@ -13495,15 +13198,6 @@
     {
       "stop_id": "vic:rail:LIL_BR1",
       "stop_name": "Bike & Ride",
-      "station_name": "Lilydale Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:LIL",
-      "station_id": "vic:rail:LIL",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:LIL_ConX",
-      "stop_name": "Connex",
       "station_name": "Lilydale Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:LIL",
@@ -14219,15 +13913,6 @@
     {
       "stop_id": "vic:rail:MCE_CN8",
       "stop_name": "Concourse 8",
-      "station_name": "Melbourne Central Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:MCE",
-      "station_id": "vic:rail:MCE",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:MCE_ConX",
-      "stop_name": "Connex",
       "station_name": "Melbourne Central Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:MCE",
@@ -15353,15 +15038,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:MCH_ConX",
-      "stop_name": "Connex",
-      "station_name": "Mitcham Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:MCH",
-      "station_id": "vic:rail:MCH",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:MCH_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Mitcham Railway Station",
@@ -15800,15 +15476,6 @@
     {
       "stop_id": "vic:rail:MLK_BR1",
       "stop_name": "Bike & Ride",
-      "station_name": "Mooroolbark Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:MLK",
-      "station_id": "vic:rail:MLK",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:MLK_ConX",
-      "stop_name": "Connex",
       "station_name": "Mooroolbark Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:MLK",
@@ -17646,15 +17313,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:NWG_ConX",
-      "stop_name": "Connex",
-      "station_name": "Nunawading Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:NWG",
-      "station_id": "vic:rail:NWG",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:NWG_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Nunawading Railway Station",
@@ -18886,15 +18544,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:PAR_ConX",
-      "stop_name": "Connex",
-      "station_name": "Parliament Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:PAR",
-      "station_id": "vic:rail:PAR",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:PAR_DP1",
       "stop_name": "Decision Point 1",
       "station_name": "Parliament Railway Station",
@@ -19711,15 +19360,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:RMD_ConX",
-      "stop_name": "Connex",
-      "station_name": "Richmond Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:RMD",
-      "station_id": "vic:rail:RMD",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:RMD_DP1",
       "stop_name": "Decision Point 1",
       "station_name": "Richmond Railway Station",
@@ -20037,15 +19677,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:RWE_ConX",
-      "stop_name": "Connex",
-      "station_name": "Ringwood East Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:RWE",
-      "station_id": "vic:rail:RWE",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:RWE_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Ringwood East Railway Station",
@@ -20204,15 +19835,6 @@
     {
       "stop_id": "vic:rail:RWD_BR1",
       "stop_name": "Bike & Ride",
-      "station_name": "Ringwood Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:RWD",
-      "station_id": "vic:rail:RWD",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:RWD_ConX",
-      "stop_name": "Connex",
       "station_name": "Ringwood Railway Station",
       "platform_code": "",
       "parent_station": "vic:rail:RWD",
@@ -23776,15 +23398,6 @@
       "station_stop": true
     },
     {
-      "stop_id": "vic:rail:TCM_ConX",
-      "stop_name": "Connex",
-      "station_name": "Tecoma Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:TCM",
-      "station_id": "vic:rail:TCM",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:TCM_EN1",
       "stop_name": "McNicol Rd",
       "station_name": "Tecoma Railway Station",
@@ -24147,15 +23760,6 @@
       "parent_station": "",
       "station_id": "vic:rail:TGA",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:TGA_ConX",
-      "stop_name": "Connex",
-      "station_name": "Tooronga Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:TGA",
-      "station_id": "vic:rail:TGA",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:TGA_EN1",
@@ -24564,15 +24168,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:UNN_ConX",
-      "stop_name": "Connex",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:UNN_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Union Railway Station ",
@@ -24840,15 +24435,6 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:UFG_ConX",
-      "stop_name": "Connex",
-      "station_name": "Upper Ferntree Gully Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:UFG",
-      "station_id": "vic:rail:UFG",
-      "station_stop": false
-    },
-    {
       "stop_id": "vic:rail:UFG_DP1",
       "stop_name": "Decision point 1",
       "station_name": "Upper Ferntree Gully Railway Station",
@@ -24931,15 +24517,6 @@
       "parent_station": "",
       "station_id": "vic:rail:UPW",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:UPW_ConX",
-      "stop_name": "Connex",
-      "station_name": "Upwey Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:UPW",
-      "station_id": "vic:rail:UPW",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:UPW_DP1",
@@ -26685,15 +26262,6 @@
       "parent_station": "",
       "station_id": "vic:rail:WSN",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:WSN_ConX",
-      "stop_name": "Connex",
-      "station_name": "Willison Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:WSN",
-      "station_id": "vic:rail:WSN",
-      "station_stop": false
     },
     {
       "stop_id": "vic:rail:WSN_DP1",
