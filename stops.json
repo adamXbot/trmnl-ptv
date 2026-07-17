@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T12:47:01Z",
+  "generated_at": "2026-07-17T17:45:51Z",
   "gtfs_path": "/home/runner/work/trmnl-ptv/trmnl-ptv/proxy/data/gtfs/2",
   "stops": [
     {
@@ -15715,15 +15715,6 @@
     },
     {
       "stop_id": "vic:rail:MLD_EN2",
-      "stop_name": "Cameron St",
-      "station_name": "Moreland Railway Station",
-      "platform_code": "",
-      "parent_station": "vic:rail:MLD",
-      "station_id": "vic:rail:MLD",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:MLD_EN3",
       "stop_name": "Station St",
       "station_name": "Moreland Railway Station",
       "platform_code": "",
@@ -15732,7 +15723,7 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:MLD_EN4",
+      "stop_id": "vic:rail:MLD_EN3",
       "stop_name": "Cameron St",
       "station_name": "Moreland Railway Station",
       "platform_code": "",
@@ -15741,7 +15732,7 @@
       "station_stop": false
     },
     {
-      "stop_id": "vic:rail:MLD_EN5",
+      "stop_id": "vic:rail:MLD_EN4",
       "stop_name": "Station St",
       "station_name": "Moreland Railway Station",
       "platform_code": "",
@@ -24157,159 +24148,6 @@
       "parent_station": "",
       "station_id": "vic:rail:UNN",
       "station_stop": true
-    },
-    {
-      "stop_id": "vic:rail:UNN_BR1",
-      "stop_name": "Bike & Ride",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_DP1",
-      "stop_name": "Decision point 1",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_DP2",
-      "stop_name": "Decision point 2",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_DP3",
-      "stop_name": "Decision point 3",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_EN1",
-      "stop_name": "Windsor Cres",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_EN2",
-      "stop_name": "Windsor Cres",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_EN3",
-      "stop_name": "Montrose St",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_EN4",
-      "stop_name": "Lorne Pde",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_EN5",
-      "stop_name": "Beresford St",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_KR1",
-      "stop_name": "Kiss & Ride 1",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_KR2",
-      "stop_name": "Kiss & Ride 2",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_LI1",
-      "stop_name": "Lift 1",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_LI2",
-      "stop_name": "Lift 2",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_LI3",
-      "stop_name": "Lift 3",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_LI4",
-      "stop_name": "Lift 4",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_PR1",
-      "stop_name": "Park & Ride 1",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
-    },
-    {
-      "stop_id": "vic:rail:UNN_PR2",
-      "stop_name": "Park & Ride 2",
-      "station_name": "Union Railway Station ",
-      "platform_code": "",
-      "parent_station": "vic:rail:UNN",
-      "station_id": "vic:rail:UNN",
-      "station_stop": false
     },
     {
       "stop_id": "26535",
