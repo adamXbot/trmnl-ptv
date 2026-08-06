@@ -3,6 +3,7 @@ require 'date'
 require 'fileutils'
 require 'json'
 require 'net/http'
+require 'openssl'
 require 'pathname'
 require 'tmpdir'
 require 'tempfile'
@@ -124,14 +125,41 @@ class GtfsScheduleBootstrap
   DEFAULT_ZIP_URL = 'https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip'
   REQUIRED_FILES = %w[routes.txt stops.txt trips.txt stop_times.txt].freeze
 
+  # The upstream CKAN portal intermittently answers with HTTP 500, so transient
+  # failures are retried with exponential backoff before the run is failed.
+  DOWNLOAD_MAX_ATTEMPTS = 4
+  DOWNLOAD_RETRY_BASE_DELAY_SECONDS = 5
+  DOWNLOAD_MAX_REDIRECTS = 3
+  DOWNLOAD_OPEN_TIMEOUT_SECONDS = 15
+  DOWNLOAD_READ_TIMEOUT_SECONDS = 120
+  ERROR_BODY_EXCERPT_CHARS = 300
+
+  class RetryableDownloadError < StandardError; end
+
+  RETRYABLE_EXCEPTIONS = [
+    Net::OpenTimeout,
+    Net::ReadTimeout,
+    Errno::ECONNREFUSED,
+    Errno::ECONNRESET,
+    Errno::EPIPE,
+    Errno::ETIMEDOUT,
+    EOFError,
+    SocketError,
+    OpenSSL::SSL::SSLError
+  ].freeze
+
   def initialize(
     gtfs_path: resolve_path(ENV.fetch('PTV_GTFS_PATH', DEFAULT_GTFS_PATH)),
     download_root: resolve_path(ENV.fetch('PTV_GTFS_DOWNLOAD_ROOT', DEFAULT_DOWNLOAD_ROOT)),
-    zip_url: ENV.fetch('PTV_GTFS_ZIP_URL', DEFAULT_ZIP_URL)
+    zip_url: ENV.fetch('PTV_GTFS_ZIP_URL', DEFAULT_ZIP_URL),
+    max_download_attempts: Integer(ENV.fetch('PTV_GTFS_DOWNLOAD_ATTEMPTS', DOWNLOAD_MAX_ATTEMPTS)),
+    retry_sleeper: ->(seconds) { sleep(seconds) }
   )
     @gtfs_path = gtfs_path
     @download_root = download_root
     @zip_url = zip_url
+    @max_download_attempts = max_download_attempts
+    @retry_sleeper = retry_sleeper
   end
 
   def ensure!
@@ -158,24 +186,96 @@ class GtfsScheduleBootstrap
   end
 
   def download_zip!
-    uri = URI(@zip_url)
     temp = Tempfile.new(['ptv-gtfs', '.zip'], Dir.tmpdir)
     temp.binmode
 
-    Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
-      request = Net::HTTP::Get.new(uri)
-      http.request(request) do |response|
-        unless response.is_a?(Net::HTTPSuccess)
-          raise "GTFS zip download failed with #{response.code}: #{response.body}"
-        end
-
-        response.read_body { |chunk| temp.write(chunk) }
-      end
+    with_download_retries do
+      temp.rewind
+      temp.truncate(0)
+      fetch_zip!(URI(@zip_url), temp)
     end
 
     temp.flush
     temp.close
     temp.path
+  end
+
+  def with_download_retries
+    attempt = 1
+    begin
+      yield
+    rescue RetryableDownloadError, *RETRYABLE_EXCEPTIONS => error
+      if attempt >= @max_download_attempts
+        raise "GTFS zip download failed after #{attempt} attempts: #{error.message}"
+      end
+
+      delay = DOWNLOAD_RETRY_BASE_DELAY_SECONDS * (2**(attempt - 1))
+      warn "[gtfs_bootstrap] download attempt #{attempt}/#{@max_download_attempts} failed " \
+           "(#{error.class}: #{error.message}); retrying in #{delay}s"
+      @retry_sleeper.call(delay)
+      attempt += 1
+      retry
+    end
+  end
+
+  def fetch_zip!(uri, temp, redirects_left = DOWNLOAD_MAX_REDIRECTS)
+    redirect_location = nil
+
+    Net::HTTP.start(
+      uri.host,
+      uri.port,
+      use_ssl: uri.scheme == 'https',
+      open_timeout: DOWNLOAD_OPEN_TIMEOUT_SECONDS,
+      read_timeout: DOWNLOAD_READ_TIMEOUT_SECONDS
+    ) do |http|
+      request = Net::HTTP::Get.new(uri)
+      http.request(request) do |response|
+        redirect_location = handle_download_response!(response, temp)
+      end
+    end
+
+    return unless redirect_location
+
+    raise "GTFS zip download exceeded #{DOWNLOAD_MAX_REDIRECTS} redirects" if redirects_left.zero?
+
+    fetch_zip!(URI.join(uri.to_s, redirect_location), temp, redirects_left - 1)
+  end
+
+  # Streams a success body into +temp+ and returns nil, returns the target
+  # location for a redirect, and raises otherwise (RetryableDownloadError for
+  # statuses worth retrying, RuntimeError for the rest).
+  def handle_download_response!(response, temp)
+    case response
+    when Net::HTTPSuccess
+      response.read_body { |chunk| temp.write(chunk) }
+      nil
+    when Net::HTTPRedirection
+      location = response['location'].to_s.strip
+      raise "GTFS zip download returned #{response.code} without a Location header" if location.empty?
+
+      location
+    else
+      message = "GTFS zip download failed with #{response.code}: #{error_body_excerpt(response)}"
+      raise RetryableDownloadError, message if retryable_status?(response)
+
+      raise message
+    end
+  end
+
+  def retryable_status?(response)
+    code = response.code.to_i
+    code >= 500 || code == 429
+  end
+
+  def error_body_excerpt(response)
+    body = response.body.to_s.strip
+    return '(empty body)' if body.empty?
+
+    excerpt = body[0, ERROR_BODY_EXCERPT_CHARS]
+    excerpt += "... (#{body.length} chars total)" if body.length > ERROR_BODY_EXCERPT_CHARS
+    excerpt
+  rescue StandardError
+    '(unreadable body)'
   end
 
   def extract_zip!(zip_path)
