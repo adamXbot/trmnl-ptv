@@ -2,4 +2,6 @@
 proxy/data/
 proxy/tmp/
 *.lock
+!Gemfile.lock
+!proxy/Gemfile.lock
 /proxy/vendor
