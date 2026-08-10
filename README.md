@@ -1,259 +1,86 @@
-# trmnl-ptv-victoria
+<div align="center">
 
-A starter TRMNL plugin for Public Transport Victoria using the PTV GTFS Realtime vehicle positions feed.
+<img src="plugin-icon.svg" alt="" width="120">
 
-This is adapted from the Queensland Translink example, but there is one important difference:
+# trmnl-ptv
 
-- The attached PTV realtime endpoint is a Protocol Buffers feed.
-- TRMNL Liquid templates expect JSON.
-- That means this plugin should poll a small JSON proxy that fetches the PTV feed, decodes the protobuf payload, and returns JSON to TRMNL.
+A TRMNL plugin that shows Melbourne metro train departures, with a Ruby proxy that turns the PTV GTFS Realtime feed into JSON the plugin can read.
 
-The current plugin is therefore set up to consume a proxy URL, not the raw PTV endpoint directly.
+[![Project status](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FadamXbot%2F.github%2Fmain%2Fbadges%2Ftrmnl-ptv.json)](https://github.com/adamXbot/.github/blob/main/STATUS.md#trmnl-ptv)
+[![Licence](https://img.shields.io/github/license/adamXbot/trmnl-ptv?label=licence)](LICENSE)
+[![Publish](https://img.shields.io/github/actions/workflow/status/adamXbot/trmnl-ptv/publish-ptv-data.yml?branch=main&label=publish)](https://github.com/adamXbot/trmnl-ptv/actions/workflows/publish-ptv-data.yml)
 
-## Deployment Modes
+</div>
 
-This repo now supports two ways to produce the JSON that TRMNL reads:
+<!-- disclosure:start -->
+> [!WARNING]
+> **Pre-1.0 — no stable release yet.** Anything can change in any release, including a patch: APIs, CLI flags, config keys, file formats, and data already on disk. Keep your own backups.
+> **Project status.** The badge above is generated from [the adamXbot status list](https://github.com/adamXbot/.github/blob/main/STATUS.md), which says what I promise for this project and every other one.
+<!-- disclosure:end -->
 
-- local proxy mode: run [proxy/server.rb](/Users/user/Downloads/ptv-victoria/proxy/server.rb) on your machine and point TRMNL at `http://localhost:9910/ptv/metro/vehicle-positions`
-- GitHub Actions snapshot mode: generate `ptv-metro.json` on a public `data` branch in your fork and point TRMNL at the raw GitHub URL
+> [!CAUTION]
+> **The published snapshot is stale.** The `Publish PTV Snapshot` workflow is currently disabled and its last runs failed, so the [`data` branch](https://github.com/adamXbot/trmnl-ptv/tree/data) has not been updated since 2026-07-24. Anything reading `ptv-metro.json` from this repository is reading old data. [PR #2](https://github.com/adamXbot/trmnl-ptv/pull/2) covers the download retry; the rest needs an owner action on GitHub Actions billing. Run the local proxy if you want current departures.
 
-## Included Proxy
+---
 
-This folder now also includes a small Ruby proxy at [proxy/server.rb](/Users/user/Downloads/ptv-victoria/proxy/server.rb).
+## Overview
 
-It:
+TRMNL plugins are Liquid templates rendered against a JSON URL. Public Transport Victoria publishes its realtime feed as GTFS Realtime protobuf, which Liquid cannot parse, so a plugin cannot point at the PTV endpoint directly.
 
-- calls the PTV metro train `vehicle-positions` endpoint
-- sends your `KeyId` or `Ocp-Apim-Subscription-Key`
-- decodes the GTFS Realtime protobuf feed
-- auto-downloads and unzips the static GTFS schedule when the expected local folder is missing
-- returns JSON that matches the Liquid templates in this plugin
-- caches responses for 30 seconds by default to stay friendly to the PTV rate limits
-- returns structured JSON error details so TRMNL can render a useful message instead of only showing a generic fetch failure
+This repository is the two halves that close that gap. `src/` holds the plugin templates for all four TRMNL layouts. `proxy/` holds a Ruby service that fetches the metro vehicle-positions feed, decodes the protobuf, joins it against the static GTFS timetable, and returns JSON shaped for those templates.
 
-The same fetch/decode/enrich path is also exposed as a one-shot snapshot generator for CI:
+It is aimed at someone who owns a TRMNL device, wants a Melbourne departure board on it, and is willing to get a free PTV Open Data key and run a small Ruby process or a scheduled GitHub Actions job.
 
-- [generate_snapshot.rb](/Users/user/Downloads/ptv-victoria/proxy/bin/generate_snapshot.rb)
-- [generate_stop_index.rb](/Users/user/Downloads/ptv-victoria/proxy/bin/generate_stop_index.rb)
-- [schedule_gate.rb](/Users/user/Downloads/ptv-victoria/proxy/bin/schedule_gate.rb)
-- [snapshot_changed.rb](/Users/user/Downloads/ptv-victoria/proxy/bin/snapshot_changed.rb)
-- [find_stop.rb](/Users/user/Downloads/ptv-victoria/proxy/bin/find_stop.rb)
+## What it does
 
-## What This Version Shows
+- **Decodes the protobuf feed into JSON.** The plugin polls the proxy rather than the PTV endpoint, because `google-protobuf` decoding has to happen somewhere Liquid is not.
+- **Joins live vehicles to the static timetable.** Live positions alone give you a `route_id` and a `stop_id`. Loading the static GTFS schedule turns those into a route name, a headsign, a stop name and a platform code.
+- **Reports punctuality against the schedule.** Each row carries a status such as `On time` or `2 min delayed`, derived from the scheduled departure time for that trip and stop.
+- **Falls back to the timetable when there is no live match.** A stop with no vehicle currently reporting still shows its next scheduled departures rather than an empty table.
+- **Treats `stopid` as a platform or a station.** A platform ID such as `12236` gives you one direction; a station group ID such as `vic:rail:RWD` gives you the whole station.
+- **Bootstraps its own schedule data.** If the static GTFS directory is missing, the proxy downloads and unzips the published GTFS archive and locates the extracted schedule folder itself.
+- **Surfaces upstream failures.** When a fetch fails the payload still returns, carrying the error type and message under `meta.error`, and the templates render that instead of an unexplained blank screen.
 
-This starter renders live metro train status filtered by:
+## Get it
 
-- `stopid` optionally
-- `routeid` optionally
-- a staleness window so very old vehicle updates are hidden
+You need a free key from the [Victorian transport open data portal](https://opendata.transport.vic.gov.au/dataset/gtfs-realtime), set as `PTV_KEY_ID` (or `PTV_SUBSCRIPTION_KEY`).
 
-It uses the live GTFS Realtime feed plus the static GTFS schedule files to show:
-
-- route and destination
-- matched stop name from the trip timetable
-- on-time or delayed status based on the scheduled stop time
-
-## Expected JSON Shape
-
-The templates assume your proxy returns GTFS Realtime data in JSON with the standard shape:
-
-```json
-{
-  "header": {
-    "timestamp": 1710000000
-  },
-  "entity": [
-    {
-      "id": "123",
-      "vehicle": {
-        "timestamp": 1710000000,
-        "stop_id": "19842",
-        "trip": {
-          "route_id": "1",
-          "trip_id": "12345"
-        },
-        "vehicle": {
-          "id": "9001",
-          "label": "9001"
-        },
-        "position": {
-          "latitude": -37.81,
-          "longitude": 144.96,
-          "bearing": 180
-        }
-      }
-    }
-  ]
-}
-```
-
-## Setup
-
-### Local Proxy
-
-1. `brew install rbenv`
-2. `brew install firefox@nightly`
-3. `brew install imagemagick`
-4. `rbenv init`
-5. `rbenv local`
-6. `bundler install`
-7. `trmnlp login`
-8. `cd proxy`
-9. `bundle install`
-10. Copy [proxy/.env.example](/Users/user/Downloads/ptv-victoria/proxy/.env.example) to `.env` or export the variables in your shell
-11. Start the proxy with `PTV_KEY_ID=your_keyid bundle exec ruby server.rb`
-12. Add `http://localhost:9910/ptv/metro/vehicle-positions` as the plugin `proxyurl`
-13. `cd ..`
-14. `trmnlp serve`
-15. `trmnlp push`
-
-If [proxy/server.rb](/Users/user/Downloads/ptv-victoria/proxy/server.rb) does not find the GTFS files at `PTV_GTFS_PATH`, it will download the zip from `PTV_GTFS_ZIP_URL`, unzip it into `PTV_GTFS_DOWNLOAD_ROOT`, and then locate the extracted schedule directory automatically. By default these paths are relative to the current working directory where you start the proxy, such as `./data/gtfs/2`.
-
-### Finding Your Stop ID
-
-The easiest option for someone using the GitHub Actions mode is the published stop finder page on the `data` branch.
-
-After the workflow runs and GitHub Pages is enabled for the `data` branch root, open:
-
-`https://<your-user>.github.io/<your-repo>/`
-
-Then search for a station name like `Ringwood`. The page will load `stops.json`, filter it in the browser, and show the station record plus the platform stop IDs you can copy into the TRMNL plugin.
-
-For Ringwood, the useful matches are:
-
-- `12235` for `Ringwood Station` platform `3`
-- `12236` for `Ringwood Station` platform `1`
-- `12237` for `Ringwood Station` platform `2`
-- `vic:rail:RWD` for the station group record
-
-How to choose between them:
-
-- use a platform stop ID like `12236` when you want one direction of travel, such as Ringwood platform 1 toward the city
-- use a station group ID like `vic:rail:RWD` when you want the whole station and are happy to see both directions together
-
-For the TRMNL plugin `stopid`, `12236` is the better choice when you want a bookmark for one platform, while `vic:rail:RWD` is the better choice when you want a bookmark for the broader station.
-
-### Plugin Filters
-
-In the TRMNL plugin settings screen, add your filters in the custom fields:
-
-- `stopid`: use a platform stop ID like `12236` for Ringwood platform 1, or a station group ID like `vic:rail:RWD` if you want to match the station more broadly
-- `routeid`: optional exact `vehicle.trip.route_id` filter from the live feed; leave this blank unless you specifically want to narrow the results
-- `stalemins`: if you are using the GitHub Actions snapshot mode, use at least `20` minutes so off-peak `15` minute snapshots do not get filtered out as stale
-
-The plugin now treats `stopid` as a station-or-platform selector:
-
-- if you enter a platform stop ID such as `12236`, it shows the next scheduled departures for that platform, which is best for one direction
-- if you enter a station group ID such as `vic:rail:RWD`, it shows the next scheduled departures for that station, which is best for both directions together
-- if live data exists for the same trip, the timetable row is enriched with live status such as `On time` or `2 min delayed`
-- if there is no live match yet, the row still shows the next scheduled departure time from the static GTFS timetable
-
-If you are not seeing any rows in the plugin:
-
-- leave `routeid` blank first
-- try a platform stop ID before a station group ID
-- increase `stalemins` to `20` or `30`
-- confirm the `proxyurl` points to the raw `ptv-metro.json` URL, not the stop finder page URL
-
-If you are running the local proxy instead, you can still search locally with:
+**Run the proxy on your own machine** — current data, but the machine has to stay up:
 
 ```bash
-curl "http://localhost:9910/ptv/stops/search?q=Ringwood"
+cd proxy
+cp .env.example .env   # then set PTV_KEY_ID
+bundle install
+PTV_KEY_ID=your_keyid bundle exec ruby server.rb
 ```
 
-That endpoint returns the same stop lookup results as the published page.
+Then set the plugin's `proxyurl` field to `http://localhost:9910/ptv/metro/vehicle-positions`.
 
-### GitHub Actions Snapshot Mode
+**Publish snapshots from a fork** — nothing to keep running, but the data is only as fresh as the last workflow run. Fork the repository, add `PTV_KEY_ID` as a repository secret, run the `Publish PTV Snapshot` workflow, and point `proxyurl` at the raw `ptv-metro.json` URL on your fork's `data` branch.
 
-1. Fork the repository.
-2. Keep the fork public so TRMNL can read the raw JSON file.
-3. Add `PTV_KEY_ID` as a repository secret.
-4. Optionally add `PTV_SUBSCRIPTION_KEY` if you want to use that auth path instead.
-5. Enable GitHub Actions on the fork.
-6. Run the [publish-ptv-data.yml](/Users/user/Downloads/ptv-victoria/.github/workflows/publish-ptv-data.yml) workflow once with `workflow_dispatch`.
-7. Confirm the workflow creates a `data` branch containing `ptv-metro.json`, `stops.json`, and `index.html`.
-8. Open GitHub `Settings` -> `Pages`.
-9. Under `Build and deployment`, choose `Deploy from a branch`.
-10. In the branch dropdown, select `data`.
-11. In the folder dropdown, select `/ (root)`.
-12. Click `Save`.
-13. Wait for GitHub Pages to finish publishing. GitHub will show the site URL near the top of the Pages settings screen once it is ready.
-14. Set the TRMNL plugin `proxyurl` to `https://raw.githubusercontent.com/<your-user>/<your-repo>/data/ptv-metro.json`.
-15. Open the stop finder at `https://<your-user>.github.io/<your-repo>/` to look up station/platform stop IDs.
+Both paths, including the GitHub Pages stop finder and the plugin's custom fields, are written up in [docs/SELF-HOSTING.md](docs/SELF-HOSTING.md).
 
-Notes for GitHub Pages:
+## Docs
 
-- The `data` branch usually will not appear in the Pages branch dropdown until after the first successful workflow run creates it.
-- If the site URL returns `404` immediately after saving, wait a minute or two and refresh the Pages settings screen.
-- Keep the repo public if you want the stop finder page and raw JSON URL to be reachable without authentication.
+There is no documentation site. Everything lives in the repository:
 
-### GitHub Token Notes
+- [docs/SELF-HOSTING.md](docs/SELF-HOSTING.md) — full setup for both modes, finding your stop ID, plugin filters, publish cadence, troubleshooting.
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — how the pipeline fits together, the JSON payload shape, proxy endpoints, environment variables.
+- [CONTRIBUTING.md](CONTRIBUTING.md) — local development and how to run the tests.
 
-For the included workflow, you usually do not need to create a separate personal access token for GitHub.
+## Contributing
 
-- The workflow pushes to the `data` branch using the built-in `GITHUB_TOKEN`.
-- This works as long as GitHub Actions has write access to repository contents.
+See [CONTRIBUTING.md](CONTRIBUTING.md). In short: the plugin preview and the proxy are deliberately separate Bundler bundles, so the protobuf dependency cannot interfere with the TRMNL preview tooling.
 
-To make sure that works in your fork:
+There is no test workflow. `proxy/test/` holds three plain-Ruby test files that you run individually:
 
-1. Open your fork on GitHub.
-2. Go to `Settings` -> `Actions` -> `General`.
-3. Under `Workflow permissions`, choose `Read and write permissions`.
-4. Save the change.
+```bash
+cd proxy && bundle install
+bundle exec ruby test/stop_lookup_test.rb
+```
 
-If you do want to create a personal access token anyway, use it only if you have a custom workflow setup that cannot rely on `GITHUB_TOKEN`.
+The only workflow in the repository is `Publish PTV Snapshot`, which generates and pushes the `data` branch. It does not run the tests.
 
-To create a fine-grained personal access token:
+## Licence
 
-1. Open GitHub `Settings` -> `Developer settings` -> `Personal access tokens` -> `Fine-grained tokens`.
-2. Click `Generate new token`.
-3. Set the resource owner to your GitHub account.
-4. Limit repository access to your fork of this repo.
-5. Give it `Contents: Read and write` permission.
-6. Generate the token and copy it immediately.
-7. Add it as a repository secret such as `GH_PAT` if you later customize the workflow to use it.
-
-The default workflow in this repo does not require `GH_PAT`.
-
-Default cadence:
-
-- every 15 minutes all day
-- every 5 minutes from 7:00am to 9:00am Melbourne time on weekdays
-
-Supported scheduling presets via workflow environment variables:
-
-- keep defaults for `15 min all day` plus `5 min` on weekday peak
-- set `PEAK_INTERVAL_MINUTES=15` to keep `15 min all day only`
-- set `BASE_INTERVAL_MINUTES=5` and `PEAK_INTERVAL_MINUTES=5` for `5 min all day`
-- change `PEAK_DAYS`, `PEAK_START_LOCAL`, and `PEAK_END_LOCAL` for custom peak windows
-
-## Proxy Endpoints
-
-- `GET /health`
-- `GET /ptv/metro/vehicle-positions`
-- `GET /ptv/stops/search?q=Ringwood`
-
-## Proxy Environment Variables
-
-- `PTV_KEY_ID`: preferred when using the auth style from your working curl example
-- `PTV_SUBSCRIPTION_KEY`: optional alternate auth method
-- `PORT`: optional, defaults to `9910`
-- `PTV_CACHE_TTL_SECONDS`: optional, defaults to `30`
-- `PTV_METRO_VEHICLE_POSITIONS_URL`: optional override for the upstream feed URL
-- `PTV_GTFS_PATH`: optional override for the local static GTFS folder
-- `PTV_GTFS_ZIP_URL`: optional override for the GTFS zip download URL
-- `PTV_GTFS_DOWNLOAD_ROOT`: optional override for where the GTFS zip is unpacked
-- `BASE_INTERVAL_MINUTES`: GitHub Actions cadence outside the peak window
-- `PEAK_INTERVAL_MINUTES`: GitHub Actions cadence inside the peak window
-- `PEAK_START_LOCAL`: Melbourne local start time for the peak window
-- `PEAK_END_LOCAL`: Melbourne local end time for the peak window
-- `PEAK_DAYS`: comma-separated day keys such as `mon,tue,wed,thu,fri`, or `weekday`, or `daily`
-
-## Notes
-
-- This starter currently targets the metro train vehicle positions feed because that is what your attached files describe.
-- If you want a true stop departures plugin next, we can extend this proxy to call a PTV departures endpoint and reshape that JSON for the original timetable-style UI.
-- The proxy bundle is intentionally separate from the root TRMNL preview bundle so protobuf dependencies do not interfere with plugin preview tooling.
-- The proxy includes local Bundler config in [proxy/.bundle/config](/Users/user/Downloads/ptv-victoria/proxy/.bundle/config) to prefer a native build of `google-protobuf`, which helps on Apple Silicon machines.
-- GitHub Actions compares snapshots with volatile timestamps stripped, so the `data` branch only changes when the underlying payload meaningfully changes.
-- The GitHub Actions publish step also writes a static stop finder page to the `data` branch so users can search station names in the browser and copy the correct platform stop ID.
+MIT — see [LICENSE](LICENSE).
